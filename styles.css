@@ -1,0 +1,102 @@
+.header {
+    display: flex;
+    background-color: #E8B5E6;
+    width: 100%;
+}
+
+.menu-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#nav-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+#nav-inlog {
+    list-style-type: none;
+    margin-right: 2em;
+}
+
+#nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 1.4em;
+    font-style: normal;
+}
+
+#nav-menu img {
+    margin-left: 1em;
+    margin-right: 3em;
+}
+
+#nav-inlog a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 1.4em;
+    font-style: normal;
+}
+
+.image-firstpage {
+    position: relative;
+    width: 100%;
+    height: 930px;
+    overflow: hidden;
+}
+
+.image-firstpage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.overlay-text1 {
+    position: absolute;
+    top: 0.3em;
+    left: 0.3em;
+    color: white;
+    font-family: 'Sacramento', cursive;
+    font-size: 8em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-text2 {
+    position: absolute;
+    top: 3.4em;
+    left: 0.7em;
+    color: white;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-text3 {
+    position: absolute;
+    top: 6em;
+    left: 3em;
+    color: white;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 4em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-text4 {
+    position: absolute;
+    top: 7em;
+    left: 0.7em;
+    color: white;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 4em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
