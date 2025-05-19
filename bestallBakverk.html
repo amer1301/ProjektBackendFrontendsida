@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Ammis Bakverk</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="menu-nav">
+            <ul id="nav-menu">
+                <li><a href="kaféerSortiment.html">
+                        Kaféer & Sortiment
+                        <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" style="width:2em; height:auto;">
+                    </a></li>
+                <li><a href="bestallBakverk.html">
+                        Beställ Bakverk
+                        <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" style="width:2em; height:auto;">
+                    </a></li>
+            </ul>
+                        <ul id="nav-inlog">
+                            <li><a href="administration.html">Logga in</a></li>
+                        </ul>
+        </nav>
+    </header>
+    <body>
+          <div class="form-container">
+            <div class="headline">
+    <h2>Formulär för beställning av bakverk</h2><img src="icons/donut.png" alt="munk" class="roterande-bild"></div>
+    <div class="form">
+    <form id="kontaktForm">
+      <label for="namn">Namn*</label>
+      <input type="text" id="namn" name="namn" placeholder="Namn på beställaren" required>
+
+      <label for="telefon">Telefon*</label>
+      <input type="tel" id="telefon" name="telefon" placeholder="Telefonnummer" pattern="[0-9]{10}" required>
+
+      <label for="email">E-post*</label>
+      <input type="email" id="email" name="email" placeholder="Email för bekräftelse" required>
+
+      <label for="bakverk">Bakverk*</label>
+      <input type="text" id="bakverk" name="bakverk" placeholder="Vilket bakverk önskar du beställa?" required>
+
+      <label for="antal">Antal*</label>
+<input type="text" id="antal" name="antal" placeholder="Hel tårta? Ange annars bitar" required>
+
+
+<label for="meddelande">Meddelande:</label>
+<textarea id="meddelande" name="meddelande" rows="5" placeholder="Beskriv gärna utförligt dina önskemål. Vi 
+kan behöva ringa dig för att bekräfta 
+önskemålen i din beställning" required></textarea>
+
+<label for="upphamtning">Tid för upphämtning:</label>
+<textarea id="upphamtning" name="upphamtning" rows="5" placeholder="Ange tid du önskar hämta upp din beställning samt på vilket kafé" required></textarea>
+</div>
+<div class="skickaBestallning">
+      <button type="submit">Skicka</button>
+      </div>
+    </form>
+  </div>
+    </body>
+    <footer>
+    <p>Vill du veta mer? Kontakta oss på telefonnummer 070 720 ** **</p>
+</footer>
+</body>
+
+</html>
