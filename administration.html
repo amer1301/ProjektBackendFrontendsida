@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Ammis Bakverk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Administrationspanel</h1>
+
+<form id="loginForm" action="/login" method="POST">
+  <label for="username">Användarnamn:</label>
+  <input type="text" id="username" placeholder="Användarnamn" required>
+
+  <label for="password">Lösenord:</label>
+  <input type="password" id="password" placeholder="Lösenord" required>
+
+  <button type="submit">Logga in</button>
+</form>
+
+
+  <section id="admin-section" style="display:none;">
+    <h2>Menyhantering</h2>
+
+    <form id="addForm">
+      <input type="text" id="name" placeholder="Namn på bakverk" required>
+      <input type="number" id="price" placeholder="Pris" required>
+      <input type="text" id="category" placeholder="Kategori" required>
+      <input type="text" id="imageUrl" placeholder="Bildens URL (/images/bild.png)" required>
+      <button type="submit">Lägg till bakverk</button>
+    </form>
+
+    <ul id="menuList"></ul>
+
+    <button id="logoutBtn">Logga ut</button>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>
