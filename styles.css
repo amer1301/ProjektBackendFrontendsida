@@ -126,6 +126,36 @@
     flex-wrap: wrap;
 }
 
+#loginFormCustom {
+    display: flex;
+    margin: 3em auto;
+    justify-content: center;
+  background: #e8b5e6;
+    background: radial-gradient(circle, rgba(232, 181, 230, 1) 0%, rgba(193, 161, 217, 1) 49%, rgba(148, 222, 233, 1) 100%);
+    padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  box-sizing: border-box;
+}
+
+.input-custom {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.input-custom:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
 .cookie-item {
     text-align: center;
     width: 400px;
@@ -216,6 +246,13 @@ footer {
         margin-left: 2em;
         margin-top: 1em;
     }
+}
+
+h1 {
+        color: rgb(0, 0, 0);
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 2em;
+        text-align: center;
 }
 
 .overlaytext2-menu {

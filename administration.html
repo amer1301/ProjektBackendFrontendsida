@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Ammis Bakverk</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Ammis Bakverk</title>
 </head>
+
+<body>
+    <header class="header">
+        <nav class="menu-nav">
+            <ul id="nav-menu">
+                        <li><a href="index.html">
+                        Startsida
+                        <img src="icons/startsida.png" alt="ikon för startsidan" style="width:auto; height:2em;">
+                    </a></li>
+                <li><a href="kaféerSortiment.html">
+                        Kaféer & Sortiment
+                        <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" style="width:2em; height:auto;">
+                    </a></li>
+                <li><a href="bestallBakverk.html">
+                        Beställ Bakverk
+                        <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" style="width:2em; height:auto;">
+                    </a></li>
+            </ul>
+                        <ul id="nav-inlog">
+                            <li><a href="administration.html">Inloggning</a></li>
+                        </ul>
+        </nav>
+    </header>
 <body>
   <h1>Administrationspanel</h1>
 
-<form id="loginForm" action="/login" method="POST">
-  <label for="username">Användarnamn:</label>
-  <input type="text" id="username" placeholder="Användarnamn" required>
+  <!-- Inloggningsformulär -->
+<form id="loginFormCustom" action="/login" method="POST" style="display: none;">
+  <label for="usernameCustom">Användarnamn:</label>
+  <input type="text" id="usernameCustom" class="input-custom" placeholder="Användarnamn" required>
 
-  <label for="password">Lösenord:</label>
-  <input type="password" id="password" placeholder="Lösenord" required>
+  <label for="passwordCustom">Lösenord:</label>
+  <input type="password" id="passwordCustom" class="input-custom" placeholder="Lösenord" required>
 
   <button type="submit">Logga in</button>
 </form>
 
-
-  <section id="admin-section" style="display:none;">
+  <!-- Administrationssektion (kommer visas när användaren är inloggad) -->
+  <section id="admin-section" style="display: none;">
     <h2>Menyhantering</h2>
 
     <form id="addForm">
