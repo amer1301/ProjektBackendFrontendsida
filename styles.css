@@ -246,6 +246,13 @@ footer {
         margin-left: 2em;
         margin-top: 1em;
     }
+
+    h1 {
+        color: rgb(0, 0, 0);
+        font-family: 'Sacramento', cursive;
+        font-size: 2em;
+        text-align: center;
+    }
 }
 
 h1 {

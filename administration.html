@@ -42,13 +42,30 @@
   <!-- Inloggningsformulär -->
 <form id="loginFormCustom" action="/login" method="POST" style="display: none;">
   <label for="usernameCustom">Användarnamn:</label>
-  <input type="text" id="usernameCustom" class="input-custom" placeholder="Användarnamn" required>
+  <input
+    type="text"
+    id="usernameCustom"
+    class="input-custom"
+    placeholder="Användarnamn"
+    name="username"
+    autocomplete="username"
+    required
+  >
 
   <label for="passwordCustom">Lösenord:</label>
-  <input type="password" id="passwordCustom" class="input-custom" placeholder="Lösenord" required>
+  <input
+    type="password"
+    id="passwordCustom"
+    class="input-custom"
+    placeholder="Lösenord"
+    name="password"
+    autocomplete="current-password"
+    required
+  >
 
   <button type="submit">Logga in</button>
 </form>
+
 
   <!-- Administrationssektion (kommer visas när användaren är inloggad) -->
   <section id="admin-section" style="display: none;">
@@ -58,7 +75,6 @@
       <input type="text" id="name" placeholder="Namn på bakverk" required>
       <input type="number" id="price" placeholder="Pris" required>
       <input type="text" id="category" placeholder="Kategori" required>
-      <input type="text" id="imageUrl" placeholder="Bildens URL (/images/bild.png)" required>
       <button type="submit">Lägg till bakverk</button>
     </form>
 

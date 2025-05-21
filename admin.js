@@ -54,7 +54,6 @@ async function login(username, password) {
     const data = await response.json();
     if (response.ok) {
         localStorage.setItem('token', data.token); // Spara token
-        alert('Inloggning lyckades!');
     } else {
         alert('Inloggning misslyckades: ' + data.error);
     }
