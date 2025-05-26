@@ -1,29 +1,46 @@
-// Exempel på att hämta menyobjekt från servern
-async function loadMenuItems() {
-  try {
-    const response = await fetch('http://localhost:5000/api/menu/menu-items');
-    if (response.ok) {
-      const menuItems = await response.json();
-      console.log(menuItems); // Här får du alla menyobjekt
-      // Visa menyn på sidan, t.ex. med en funktion som renderar dem i HTML
-      renderMenuItems(menuItems);
-    } else {
-      console.error('Fel vid hämtning av menyobjekt:', response.status);
+const cafeSelect = document.getElementById('cafe');
+if (cafeSelect) {
+  cafeSelect.addEventListener('change', (e) => {
+    const selectedCafe = e.target.value;
+    if (selectedCafe) {
+      loadMenuForCafe(selectedCafe.toLowerCase());  // Ladda menyn för valt kafé
     }
-  } catch (error) {
-    console.error('Fel vid hämtning av menyobjekt:', error);
-  }
-}
-
-// Funktion för att rendera menyobjekten i HTML
-function renderMenuItems(menuItems) {
-  const menuContainer = document.getElementById('menuList');
-  menuContainer.innerHTML = ''; // Töm befintlig lista
-  menuItems.forEach(item => {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${item.name} - ${item.price} SEK (${item.category})`;
-    menuContainer.appendChild(listItem);
   });
 }
 
-loadMenuItems(); // Hämta och rendera menyobjekt på sidan
+const form = document.getElementById('addForm');
+if (form) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+    const category = document.getElementById('category').value;
+    const cafe = document.getElementById('cafe')?.value || "okänt";
+
+    const newItem = { name, price, category, cafe };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/menu/menu-items', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newItem)
+      });
+
+      if (response.ok) {
+        const createdItem = await response.json();
+        console.log('Bakverk tillagt:', createdItem);
+
+        // Uppdatera menylistan
+        loadMenuItems();
+
+        // Rensa formuläret
+        e.target.reset();
+      } else {
+        console.error('Fel vid tillägg av bakverk:', response.status);
+      }
+    } catch (error) {
+      console.error('Nätverksfel vid tillägg av bakverk:', error);
+    }
+  });
+}

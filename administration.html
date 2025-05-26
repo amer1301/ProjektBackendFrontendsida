@@ -17,26 +17,18 @@
 <body>
     <header class="header">
         <nav class="menu-nav">
-            <ul id="nav-menu">
-                        <li><a href="index.html">
-                        Startsida
-                        <img src="icons/startsida.png" alt="ikon för startsidan" style="width:auto; height:2em;">
-                    </a></li>
-                <li><a href="kaféerSortiment.html">
-                        Kaféer & Sortiment
-                        <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" style="width:2em; height:auto;">
-                    </a></li>
-                <li><a href="bestallBakverk.html">
-                        Beställ Bakverk
-                        <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" style="width:2em; height:auto;">
-                    </a></li>
-            </ul>
-                        <ul id="nav-inlog">
-                            <li><a href="administration.html">Inloggning</a></li>
-                        </ul>
-        </nav>
+  <ul id="nav-menu">
+    <li><a href="kaféerSortiment.html">Meny</a></li>
+  </ul>
+
+  <ul id="nav-inlog">
+    <li><a id="loginLink" href="administration.html">Inloggning</a></li>
+  </ul>
+</nav>
     </header>
 <body>
+  <body id="admin-page">
+
   <h1>Administrationspanel</h1>
 
   <!-- Inloggningsformulär -->
@@ -66,15 +58,39 @@
   <button type="submit">Logga in</button>
 </form>
 
+<div id="message" class="hidden"></div>
+
 
   <!-- Administrationssektion (kommer visas när användaren är inloggad) -->
   <section id="admin-section" style="display: none;">
     <h2>Menyhantering</h2>
 
     <form id="addForm">
+      <select id="cafe" required>
+  <option value="" disabled selected>Välj kafé</option>
+  <option value="stockholm">Stockholm</option>
+    <option value="göteborg">Göteborg</option>
+  <option value="malmö">Malmö</option>
+  <option value="umeå">Umeå</option>
+  <option value="luleå">Luleå</option>
+  <option value="uppsala">Uppsala</option>
+  <option value="norrköping">Norrköping</option>
+  <option value="växjö">Växjö</option>
+  <option value="karlstad">Karlstad</option>
+  <option value="örebro">Örebro</option>
+  <option value="sundsvall">Sundsvall</option>
+</select>
       <input type="text" id="name" placeholder="Namn på bakverk" required>
       <input type="number" id="price" placeholder="Pris" required>
-      <input type="text" id="category" placeholder="Kategori" required>
+
+       <select id="category" required>
+    <option value="" disabled selected>Välj kategori</option>
+    <option value="tårta">Tårta</option>
+    <option value="kaka">Kaka</option>
+    <option value="bakelse">Bakelse</option>
+    <option value="bröd">Bröd</option>
+  </select>
+
       <button type="submit">Lägg till bakverk</button>
     </form>
 
@@ -83,6 +99,9 @@
     <button id="logoutBtn">Logga ut</button>
   </section>
 
-  <script src="admin.js"></script>
+<script src="admin.js" defer></script>
+  <script src="menu.js" defer></script>
+<script src="bakverk.js" defer></script>
+
 </body>
 </html>

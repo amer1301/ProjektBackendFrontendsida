@@ -33,8 +33,13 @@ const cafeLocations = [
     return;
   }
 
-  const location = matchedCafe.address;
-  resultDiv.innerHTML = `<strong>${matchedCafe.name}</strong><br>${location}`;
+const location = matchedCafe.address;
+resultDiv.innerHTML = `<strong>${matchedCafe.name}</strong><br>${location}`;
+
+// 🟡 Lägg till detta direkt efter att resultatet visas:
+if (window.loadMenuForCafe) {
+  loadMenuForCafe(matchedCafe.city.toLowerCase());
+}
 
   const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}&addressdetails=1`);
   const data = await response.json();

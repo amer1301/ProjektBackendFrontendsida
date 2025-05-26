@@ -22,25 +22,30 @@
 <body>
     <header class="header">
         <nav class="menu-nav">
+          <ul id="nav-inlog" class="nav-inlog">
+      <li><a href="administration.html">Logga in</a></li>
+    </ul>
+
+  <button class="menu-toggle" aria-label="Öppna meny">&#9776;</button>
+
             <ul id="nav-menu">
                         <li><a href="index.html">
                         Startsida
-                        <img src="icons/startsida.png" alt="ikon för startsidan" style="width:auto; height:2em;">
+                        <img src="icons/startsida.png" alt="ikon för startsidan" class="nav-cake">
                     </a></li>
                 <li><a href="kaféerSortiment.html">
                         Kaféer & Sortiment
-                        <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" style="width:2em; height:auto;">
+                        <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" class="nav-slice">
                     </a></li>
                 <li><a href="bestallBakverk.html">
                         Beställ Bakverk
-                        <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" style="width:2em; height:auto;">
+                        <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" class="nav-slice">
                     </a></li>
             </ul>
-                        <ul id="nav-inlog">
-                            <li><a href="administration.html">Logga in</a></li>
-                        </ul>
         </nav>
     </header>
+
+    <body id="public-page">
 
         <div class="adress">
         <h1>Besök något av våra kaféer</h1><img src="icons/kartmarkering.png" alt="markör för plats"></div>
@@ -69,6 +74,7 @@
     <footer>
         <p>Vill du veta mer? Kontakta oss på telefonnummer 070 720 ** **</p>
     </footer>
-    <script src="bakverk.js"></script>
+    <script src="menu.js" defer></script>
+
 </body>
 </html>
