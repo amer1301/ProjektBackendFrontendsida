@@ -124,15 +124,15 @@
 }
 
 .cookies h1 {
-        font-family: 'Patrick Hand SC', cursive;
-        font-weight: 500;
-        font-size: 2em;
+    font-family: 'Patrick Hand SC', cursive;
+    font-weight: 500;
+    font-size: 2em;
 }
 
 .cake-info h2 {
-            font-family: 'Patrick Hand SC', cursive;
-        font-weight: 500;
-        font-size: 2em;
+    font-family: 'Patrick Hand SC', cursive;
+    font-weight: 500;
+    font-size: 2em;
 }
 
 .images-cookies {
@@ -147,29 +147,29 @@
     display: flex;
     margin: 3em auto;
     justify-content: center;
-  background: #e8b5e6;
+    background: #e8b5e6;
     background: radial-gradient(circle, rgba(232, 181, 230, 1) 0%, rgba(193, 161, 217, 1) 49%, rgba(148, 222, 233, 1) 100%);
     padding: 2em;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    box-sizing: border-box;
 }
 
 .input-custom {
-  width: 100%;
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
 .input-custom:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 
@@ -223,7 +223,6 @@
     text-align: center;
     justify-content: center;
     margin: 1em auto;
-    width: 400px;
     font-family: 'Karla', sans-serif;
 }
 
@@ -273,10 +272,10 @@ footer {
 }
 
 h1 {
-        color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
-        font-size: 2em;
-        text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2em;
+    text-align: center;
 }
 
 .overlaytext2-menu {
@@ -451,20 +450,20 @@ textarea {
 }
 
 .menu-toggle {
-  display: none;
-  background: none;
-  font-size: 2em;
-  border: none;
-  cursor: pointer;
-  color: #000000;
+    display: none;
+    background: none;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    color: #000000;
 }
 
 #nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 2em;
-  margin: 0;
-  padding: 1em;
+    display: flex;
+    list-style: none;
+    gap: 2em;
+    margin: 0;
+    padding: 1em;
 }
 
 @media (max-width: 1395px) {
@@ -476,85 +475,212 @@ textarea {
 
 @media (max-width: 1025px) {
     .nav-cake {
-    width: auto;
-    height: 1.5em;
-    margin-left: 0.5em;
-    margin-right: 1em;
-}
+        width: auto;
+        height: 1.5em;
+        margin-left: 0.5em;
+        margin-right: 1em;
+    }
 
-.nav-slice {
-    margin-left: 0.5em;
-    margin-right: 1em;
-    width: 1.5em;
-    height: auto;
-}
+    .nav-slice {
+        margin-left: 0.5em;
+        margin-right: 1em;
+        width: 1.5em;
+        height: auto;
+    }
 
-.overlay-text1 {
-    font-size: 6em;
-}
+    .overlay-text1 {
+        font-size: 6em;
+    }
 
-.overlay-text2 {
-    font-size: 2.4em;
-}
+    .overlay-text2 {
+        font-size: 2.4em;
+    }
 
-.overlay-text3 {
-    top: 8em;
-    font-size: 2.5em;
-}
+    .overlay-text3 {
+        top: 8em;
+        font-size: 2.5em;
+    }
 
-.overlay-text4 {
-    top: 9em;
-    font-size: 2.5em
-}
+    .overlay-text4 {
+        top: 9em;
+        font-size: 2.5em
+    }
 
-.image-firstpage {
-    height: 750px;
-}
+    .image-firstpage {
+        height: 750px;
+    }
+
+    .cake img {
+        width: 45em;
+    }
 }
 
 @media (max-width: 998px) {
-.images-cookies {
-    flex-wrap: wrap;
-    gap: 3em;
-  }
+    .images-cookies {
+        flex-wrap: wrap;
+        gap: 3em;
+    }
 
-  .cookie-item {
-    width: 45%;
-    max-width: 400px;
-  }
-  .headline-slice {
-    width: 3em;
-}
+    .cookie-item {
+        width: 45%;
+        max-width: 400px;
+    }
 
-.cake-info h2 {
-    font-size: 1.5em;
-}
+    .headline-slice {
+        width: 3em;
+    }
+
+    .cake-info h2 {
+        font-size: 1.5em;
+    }
 }
 
 @media (max-width: 894px) {
     .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
+        display: block;
+        margin-left: auto;
+    }
 
- #nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #E8B5E6;
-    width: 30%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding-left: 0.5em;
-    z-index: 10;
-  }
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #E8B5E6;
+        width: 30%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding-left: 0.5em;
+        z-index: 10;
+    }
 
- .menu-nav.open #nav-menu {
-    display: flex;
-  }
+    .menu-nav.open #nav-menu {
+        display: flex;
+    }
 
-   .nav-inlog {
-    display: block;
-  }
+    .nav-inlog {
+        display: block;
+    }
+
+    footer p {
+        font-size: 1.5em;
+}
+}
+
+@media (max-width: 746px) {
+
+    .cake img {
+        width: 35em;
+    }
+
+    .headline-slice {
+        display: none;
+    }
+
+    .overlay-text1 {
+        font-size: 4em;
+    }
+
+    .overlay-text2 {
+        font-size: 1.7em;
+    }
+
+    .overlay-text3 {
+        font-size: 1.5em;
+        top: 13em;
+    }
+
+    .overlay-text4 {
+    font-size: 1.5em;
+    top: 14em;
+    }
+
+        #nav-menu {
+        width: 40%;
+        }
+}
+
+@media (max-width: 619px) {
+            #nav-menu {
+        width: 45%;
+        }
+
+            .image-firstpage {
+        height: 500px;
+    }
+
+        .overlay-text3 {
+        top: 8em;
+        }
+
+        .overlay-text4 {
+        top: 9em;
+        }
+
+        .cookies h1 {
+    font-size: 1.5em;
+}
+
+.cookie-item p,
+.cake p {
+    font-size: 1em;
+}
+
+.cake-info h2 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+        footer p {
+        font-size: 1.2em;
+}
+
+#nav-menu a {
+    font-size: 1.2em;
+}
+
+    .cake img {
+        width: 25em;
+    }
+}
+
+@media (max-width: 512px) {
+
+        .cookie-item {
+        width: 75%;
+    }
+
+    .nav-cake,
+    .nav-slice {
+        display: none;
+}
+
+    .cake img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 454px) {
+        .image-firstpage {
+        height: 350px;
+    }
+
+        .overlay-text1 {
+        font-size: 2.5em;
+    }
+    .overlay-text2,
+    .overlay-text3,
+    .overlay-text4 {
+        font-size: 1.2em;
+    }
+
+    footer p {
+        font-size: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .cookie-item p, .cake p {
+        font-size: 0.8em;
+    }
 }
