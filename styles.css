@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 #nav-menu {
@@ -31,9 +32,18 @@
     font-style: normal;
 }
 
-#nav-menu img {
-    margin-left: 1em;
-    margin-right: 3em;
+.nav-cake {
+    width: auto;
+    height: 2em;
+    margin-left: 0.5em;
+    margin-right: 1.5em;
+}
+
+.nav-slice {
+    margin-left: 0.5em;
+    margin-right: 1.5em;
+    width: 2em;
+    height: auto;
 }
 
 #nav-inlog a {
@@ -111,11 +121,18 @@
     img {
         margin-left: 2em;
     }
+}
 
-    p {
-        font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.cookies h1 {
+        font-family: 'Patrick Hand SC', cursive;
+        font-weight: 500;
         font-size: 2em;
-    }
+}
+
+.cake-info h2 {
+            font-family: 'Patrick Hand SC', cursive;
+        font-weight: 500;
+        font-size: 2em;
 }
 
 .images-cookies {
@@ -426,4 +443,118 @@ textarea {
     border-radius: 1em;
     font-weight: bold;
     background-color: #94DEE9;
+}
+
+.headline-slice {
+    width: 5em;
+    height: auto;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+}
+
+#nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2em;
+  margin: 0;
+  padding: 1em;
+}
+
+@media (max-width: 1395px) {
+
+    .cake img {
+        width: 60em;
+    }
+}
+
+@media (max-width: 1025px) {
+    .nav-cake {
+    width: auto;
+    height: 1.5em;
+    margin-left: 0.5em;
+    margin-right: 1em;
+}
+
+.nav-slice {
+    margin-left: 0.5em;
+    margin-right: 1em;
+    width: 1.5em;
+    height: auto;
+}
+
+.overlay-text1 {
+    font-size: 6em;
+}
+
+.overlay-text2 {
+    font-size: 2.4em;
+}
+
+.overlay-text3 {
+    top: 8em;
+    font-size: 2.5em;
+}
+
+.overlay-text4 {
+    top: 9em;
+    font-size: 2.5em
+}
+
+.image-firstpage {
+    height: 750px;
+}
+}
+
+@media (max-width: 998px) {
+.images-cookies {
+    flex-wrap: wrap;
+    gap: 3em;
+  }
+
+  .cookie-item {
+    width: 45%;
+    max-width: 400px;
+  }
+  .headline-slice {
+    width: 3em;
+}
+
+.cake-info h2 {
+    font-size: 1.5em;
+}
+}
+
+@media (max-width: 894px) {
+    .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+ #nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #E8B5E6;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding-left: 0.5em;
+    z-index: 10;
+  }
+
+ .menu-nav.open #nav-menu {
+    display: flex;
+  }
+
+   .nav-inlog {
+    display: block;
+  }
 }
