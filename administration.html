@@ -14,20 +14,20 @@
     <title>Ammis Bakverk</title>
 </head>
 
-<body>
+    <body id="admin-page">
     <header class="header">
         <nav class="menu-nav">
   <ul id="nav-menu">
-    <li><a href="kaféerSortiment.html">Meny</a></li>
+    <li><a href="kaféerSortiment.html">Meny<img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin"></a></li>
+    <li><a href="administration.html">Administrationsportal<img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin"></a></li>
   </ul>
 
   <ul id="nav-inlog">
-    <li><a id="loginLink" href="administration.html">Inloggning</a></li>
+    <li><span id="welcomeText">Välkommen!</span></li>
+    <li><button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button></li>
   </ul>
 </nav>
     </header>
-<body>
-  <body id="admin-page">
 
   <h1>Administrationspanel</h1>
 
@@ -93,15 +93,17 @@
 
       <button type="submit">Lägg till bakverk</button>
     </form>
-
-    <ul id="menuList"></ul>
-
-    <button id="logoutBtn">Logga ut</button>
   </section>
+
+  <section class="added-menu">
+    <h3 id="cafeNameTitle"></h3>
+    <ul id="menuList"></ul>
+    </section>
+
 
 <script src="admin.js" defer></script>
   <script src="menu.js" defer></script>
 <script src="bakverk.js" defer></script>
-
+<script src="authHeader.js" defer></script>
 </body>
 </html>

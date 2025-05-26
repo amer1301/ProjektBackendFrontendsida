@@ -20,6 +20,10 @@
 #nav-inlog {
     list-style-type: none;
     margin-right: 2em;
+     margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 3em;
 }
 
 #nav-menu a {
@@ -489,6 +493,118 @@ textarea {
   display: none;
 }
 
+#welcomeText {
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.6em;
+    font-style: normal;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: black;
+  font-family: 'Patrick Hand SC', cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 1.4em;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+#admin-section {
+    display: flex;
+    margin: 3em auto;
+    justify-content: center;
+    background: #e8b5e6;
+    background: radial-gradient(circle, rgba(232, 181, 230, 1) 0%, rgba(193, 161, 217, 1) 49%, rgba(148, 222, 233, 1) 100%);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    box-sizing: border-box;
+    h2 {
+        color: rgb(0, 0, 0);
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+}
+
+#addForm input,
+#addForm select,
+#addForm button {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 500px;
+}
+
+#cafe,
+#category {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.nav-admin {
+    width: 2em;
+    height: auto;
+    transform: rotate(-90deg);
+    margin-left: 1em;
+}
+
+#menuList {
+    font-family: 'Patrick Hand SC', cursive;
+    font-weight: bold;
+    font-size: 1.5em;
+    list-style-type: none;
+    text-align: center;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+  margin: 2em auto;
+}
+
+
+.added-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5em auto;
+    background: #e8b5e6;
+    background: radial-gradient(circle, rgba(232, 181, 230, 1) 0%, rgba(193, 161, 217, 1) 49%, rgba(148, 222, 233, 1) 100%);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+}
+
+#cafeNameTitle {
+color: rgb(0, 0, 0);
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 2em;
+}
+
+.category-icon {
+width: 2em;
+height: auto;
+}
 
 @media (max-width: 1395px) {
 

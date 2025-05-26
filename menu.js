@@ -1,4 +1,5 @@
-// --- Funktioner för att hämta och rendera meny ---
+const cafeNameTitle = document.getElementById('cafeNameTitle');
+const addedMenuSection = document.querySelector('.added-menu'); 
 
 // Hämta menyobjekt för alla kaféer (administration)
 async function loadMenuItems() {
@@ -35,26 +36,68 @@ function renderMenuItems(menuItems) {
   const menuContainer = document.getElementById('menuList');
   if (!menuContainer) return;
 
-   const isAdminPage = document.body.id === 'admin-page'; 
-
+  const isAdminPage = document.body.id === 'admin-page';
   menuContainer.innerHTML = '';
+
+if (menuItems.length > 0) {
+  if (isAdminPage && cafeNameTitle) {
+    cafeNameTitle.textContent = `Ammis bakverk i: ${menuItems[0].cafe}`;
+  }
+} else {
+  if (isAdminPage && cafeNameTitle) {
+    cafeNameTitle.textContent = 'Inga bakverk tillagda ännu för valt kafé.';
+  }
+}
+
+
   menuItems.forEach(item => {
     const listItem = document.createElement('li');
-    listItem.textContent = `${item.name} - ${item.price} SEK (${item.category})`;
+    listItem.classList.add('menu-item');
 
- if (isAdminPage) {
+    // Texten
+    const textSpan = document.createElement('span');
+    textSpan.textContent = `${item.name} - ${item.price} SEK (${item.category})`;
+    listItem.appendChild(textSpan);
+
+    if (isAdminPage) {
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Ta bort';
+      deleteButton.classList.add('delete-button');
       deleteButton.style.marginLeft = '1em';
-      deleteButton.addEventListener('click', () => {
-        deleteMenuItem(item._id);
-      });
+
+deleteButton.addEventListener('click', () => {
+  deleteMenuItem(item._id);
+});
+
+
       listItem.appendChild(deleteButton);
+    } else {
+      const icon = document.createElement('img');
+      icon.alt = `ikon för ${item.category}`;
+      icon.classList.add('category-icon');
+
+      switch (item.category.toLowerCase()) {
+        case 'tårta':
+          icon.src = 'icons/cake-small.png';
+          break;
+        case 'kaka':
+          icon.src = 'icons/cookies-small.png';
+          break;
+        case 'bakelse':
+          icon.src = 'icons/pastry-small.png';
+          break;
+        case 'bröd':
+          icon.src = 'icons/bread-small.png';
+          break;
+      }
+
+      listItem.appendChild(icon);
     }
 
     menuContainer.appendChild(listItem);
   });
 }
+
 
 // Ta bort menyobjekt via API
 async function deleteMenuItem(itemId) {
@@ -80,14 +123,17 @@ window.loadMenuForCafe = loadMenuForCafe;
 
 // --- Eventlistener för kaféval i dropdown ---
 const cafeSelect = document.getElementById('cafe');
-if (cafeSelect) {
   cafeSelect.addEventListener('change', (e) => {
     const selectedCafe = e.target.value;
     if (selectedCafe) {
-      loadMenuForCafe(selectedCafe.toLowerCase());  // Ladda menyn för valt kafé
+      addedMenuSection.style.display = 'flex';  // Visa sektionen när kafé väljs
+      loadMenuForCafe(selectedCafe.toLowerCase());
+    } else {
+      addedMenuSection.style.display = 'none';  // Dölj om inget är valt
+      cafeNameTitle.textContent = '';
     }
   });
-}
+
 
 // --- Eventlistener för formulär - lägg till nytt bakverk ---
 const form = document.getElementById('addForm');
