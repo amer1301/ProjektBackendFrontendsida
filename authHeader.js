@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeText = document.getElementById('welcomeText');
   const logoutBtn = document.getElementById('logoutBtn2');
 
+  const adminNav = document.getElementById('adminNav'); // NY RAD
+
   if (token && username) {
     if (guestHeader) guestHeader.style.display = 'none';
     if (loggedInHeader) loggedInHeader.style.display = 'block';
@@ -20,8 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
       logoutBtn.addEventListener('click', () => {
         localStorage.removeItem('token');
         localStorage.removeItem('username');
-        location.reload(); // Ladda om sidan för att visa rätt header
+        location.reload(); // Ladda om sidan
       });
     }
+
+    if (adminNav) adminNav.style.display = 'flex'; // VISA NAV-MENY
+  } else {
+    if (adminNav) adminNav.style.display = 'none'; // DÖLJ NAV-MENY
   }
 });

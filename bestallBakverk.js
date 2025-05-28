@@ -65,7 +65,7 @@ function initFormPage() {
       });
 
       if (res.ok) {
-        messageBox.textContent = "✅ Beställning mottagen!";
+        messageBox.textContent = "✅ Tack för din beställning! Vi kommer kontakta dig vid frågor kring eventuella önskemål";
         messageBox.classList.add("success");
         form.reset();
       } else {

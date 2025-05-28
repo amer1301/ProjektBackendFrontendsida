@@ -1,3 +1,7 @@
+body {
+    background-color: #f8eef7;
+}
+
 .header {
     display: flex;
     background-color: #E8B5E6;
@@ -250,6 +254,7 @@ footer {
     margin: 2em auto;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
 .overlaytext-menu {
@@ -406,6 +411,12 @@ button:hover {
 }
 
 
+#formMessage {
+        font-weight: bold;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 1.5em;
+}
+
 form {
     display: flex;
     flex-wrap: wrap;
@@ -439,12 +450,52 @@ textarea {
     font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+input[type="date"],
+input[type="time"],
+select {
+  width: calc(100% - 160px);
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: white;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  outline: none;
+  border-color: #94DEE9;
+  box-shadow: 0 0 5px rgba(148, 222, 233, 0.7);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z" fill="%23666"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 10px;
+  cursor: pointer;
+}
+
+
 #skickaBestallning {
     margin-top: 2em;
     padding: 0 1em;
     border-radius: 1em;
     font-weight: bold;
     background-color: #94DEE9;
+}
+
+.text-order {
+    font-weight: bold;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 1.5em;
 }
 
 .headline-slice {
@@ -606,8 +657,106 @@ width: 2em;
 height: auto;
 }
 
- .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
-  .modal-content { position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; }
+ .modal { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+  .modal-content { 
+    position: relative; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 15em;
+    background-color: white; 
+    padding: 1.5em;
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px; 
+  font-size: 1.5em;
+  border-radius: 5px;
+}
+
+#bestallningsContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 3em auto;
+    justify-content: center;
+    align-items: center;
+    background: #e8b5e6;
+    background: radial-gradient(circle, rgba(232, 181, 230, 1) 0%, rgba(193, 161, 217, 1) 49%, rgba(148, 222, 233, 1) 100%);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 750px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.bestallningslista h2 {
+        color: rgb(0, 0, 0);
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 4em auto;
+}
+
+#bestallningsContainer h3 {
+            color: rgb(0, 0, 0);
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 4em auto;
+}
+
+#bestallningsContainer p {
+                color: rgb(0, 0, 0);
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 1.2em;
+        text-align: center;
+        margin-bottom: 4em auto;
+}
+
+
+.bestallningslista label {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+}
+
+#filterCafe {
+display: block;
+    margin: 2em auto;
+    width: 100%;
+    max-width: 220px;
+    height: 3em;
+}
+
+#bestallningsContainer select {
+display: block;  
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  margin: 1em auto;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#bestallningsContainer select:focus {
+  outline: none;
+  border-color: #f080cc;
+  box-shadow: 0 0 0 2px rgba(240, 128, 128, 0.2);
+}
 
 
 @media (max-width: 1395px) {
