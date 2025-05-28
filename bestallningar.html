@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Ammis Bakverk</title>
+</head>
+
+    <body id="admin-page">
+    <header class="header">
+        <nav class="menu-nav">
+  <ul id="nav-menu">
+    <li><a href="kaféerSortiment.html">Meny<img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin"></a></li>
+    <li><a href="administration.html">Administrationsportal<img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin"></a></li>
+    <li><a href="bestallningar.html">Beställningar<img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin"></a></li>
+  </ul>
+
+  <ul id="nav-inlog">
+    <li><span id="welcomeText">Välkommen!</span></li>
+    <li><button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button></li>
+  </ul>
+</nav>
+    </header>
+<body id="bestall-lista">
+
+  <main class="bestallningslista">
+    <h2>Inkomna beställningar</h2>
+    <label for="filterCafe">Filtrera på kafé:</label>
+<select id="filterCafe">
+  <option value="">Visa alla kaféer</option>
+  <option value="Storgatan 5, Stockholm">Storgatan 5, Stockholm</option>
+  <option value="Södra Vägen 10, Göteborg">Södra Vägen 10, Göteborg</option>
+  <option value="Lilla Torg 3, Malmö">Lilla Torg 3, Malmö</option>
+  <option value="Hamngatan 12, Umeå">Hamngatan 12, Umeå</option>
+  <option value="Storgatan 8, Luleå">Storgatan 8, Luleå</option>
+  <option value="Kyrkogatan 1, Uppsala">Kyrkogatan 1, Uppsala</option>
+  <option value="Östra Promenaden 4, Norrköping">Östra Promenaden 4, Norrköping</option>
+  <option value="Stora Torget 2, Växjö">Stora Torget 2, Växjö</option>
+  <option value="Drottninggatan 20, Karlstad">Drottninggatan 20, Karlstad</option>
+  <option value="Kungsgatan 18, Örebro">Kungsgatan 18, Örebro</option>
+  <option value="Storgatan 15, Sundsvall">Storgatan 15, Sundsvall</option>
+</select>
+
+    <div id="bestallningsContainer"></div>
+    <div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <p>Vill du markera denna beställning som klar och ta bort den?</p>
+    <button id="confirmYes">Ja</button>
+    <button id="confirmNo">Nej</button>
+  </div>
+</div>
+  </main>
+
+  <!-- Länka till JS -->
+  <script src="bestallningar.js"></script>
+  <script src="bestallBakverk.js"></script>
+</body>
+
+</html>
