@@ -15,37 +15,21 @@
 </head>
 
 <body id="admin-page">
-  <header class="header">
-    <nav class="menu-nav" aria-label="Huvudmeny">
-      <ul id="nav-menu" role="menubar">
-        <li role="none">
-          <a href="kaféerSortiment.html" role="menuitem" tabindex="0">
-            Meny
-            <img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin" />
-          </a>
-        </li>
-        <li role="none">
-          <a href="administration.html" role="menuitem" tabindex="0">
-            Menyhantering
-            <img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin" />
-          </a>
-        </li>
-        <li role="none">
-          <a href="bestallningar.html" role="menuitem" tabindex="0">
-            Beställningar
-            <img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin" />
-          </a>
-        </li>
-      </ul>
 
-      <ul id="nav-inlog">
-        <li><span id="welcomeText">Välkommen!</span></li>
-        <li>
-          <button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+<nav class="menu-nav admin-menu" id="adminNav" aria-label="Adminnavigering">
+ <button class="menu-toggle-admin" aria-label="Öppna adminmeny">&#9776;</button>
+    <ul id="nav-menu-admin" class="nav-menu-admin">
+      <li><a href="kaféerSortiment.html"><img src="icons/donut3.png" alt="" class="nav-admin" /> Meny</a></li>
+      <li><a href="administration.html"><img src="icons/donut4.png" alt="" class="nav-admin" /> Menyhantering</a></li>
+      <li><a href="bestallningar.html"><img src="icons/donut5.png" alt="" class="nav-admin" /> Beställningar</a></li>
+    </ul>
+    <ul id="nav-inlog" class="nav-inlog">
+      <li><span id="welcomeText" aria-live="polite">Välkommen!</span></li>
+      <li><button id="logoutBtn2" class="logout-button">Logga ut</button></li>
+    </ul>
+  </nav>
+</header>
 
   <main class="bestallningslista">
     <h2 id="bestallningar-heading">Inkomna beställningar</h2>
@@ -83,6 +67,7 @@
   <script src="bestallningar.js" defer></script>
   <script src="bestallBakverk.js" defer></script>
   <script src="authHeader.js" defer></script>
+    <script src="menu-nav.js" defer></script>
 </body>
 
 </html>

@@ -319,6 +319,7 @@ h1 {
     font-family: 'Patrick Hand SC', cursive;
     font-size: 2em;
     text-align: center;
+    font-weight: 500;
 }
 
 .overlaytext2-menu {
@@ -780,6 +781,7 @@ height: auto;
     display: flex;
     align-self: center;
     margin: 0 auto;
+    font-size: 1.4em;
 }
 
 #filterCafe {
@@ -949,7 +951,8 @@ display: none;
         width: 3em;
     }
 
-    .cake-info h2 {
+    .cake-info h2,
+    .cookies h2 {
         font-size: 1.5em;
     }
 }
@@ -1017,8 +1020,24 @@ display: none;
 }
 
 @media (max-width: 786px) {
+    .summary p {
+    font-weight: 500;
+    max-width: 60ch;
+}
     .overlaytext-menu {
     font-size: 2em;
+}
+
+h2#bestallningar-heading {
+    font-size: 1.5em;
+}
+
+#bestallningsContainer {
+    width: 90%;
+}
+
+.bestallningslista label {
+    font-size: 1.2em;
 }
 
 .overlaytext2-menu h2 {
@@ -1028,6 +1047,10 @@ display: none;
 
     .overlaytext2-menu p {
         font-size: 1em;
+}
+
+#bestallningsContainer h3 {
+    font-size: 1.5em;
 }
 
     li.menu-item {
@@ -1093,6 +1116,11 @@ width: 90%;
 }
 
 @media (max-width: 619px) {
+
+    .summary p {
+    max-width: 50ch;
+    margin-left: 1em;
+}
             #nav-menu {
         width: 45%;
         }
@@ -1169,6 +1197,10 @@ width: 90%;
 }
 
 @media (max-width: 512px) {
+
+    .cookies h2 {
+        text-align: center;
+    }
         #addForm input, #addForm select, #addForm button {
     max-width: 200px
 }
@@ -1248,5 +1280,22 @@ h1#menu-heading {
 
         .overlaytext2-menu p {
         font-size: 0.8em;
+    }
+
+        h2#bestallningar-heading {
+        font-size: 1.2em;
+    }
+
+        .bestallningslista label,
+        #bestallningsContainer p {
+        font-size: 1em;
+    }
+
+        #bestallningsContainer h3 {
+        font-size: 1.2em;
+    }
+
+    #bestallningsContainer select {
+        width: 350px;
     }
 }
