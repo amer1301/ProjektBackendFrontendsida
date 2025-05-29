@@ -141,7 +141,8 @@ body {
 }
 
 .cookies,
-.cake-info {
+.cake-info,
+.summary-heading {
     margin-top: 2em;
     display: flex;
     align-items: center;
@@ -152,7 +153,19 @@ body {
     }
 }
 
-.cookies h1 {
+.summary p {
+    margin: 2em auto;
+    font-weight: bold;
+    max-width: 70ch;
+    font-family: 'Karla', sans-serif;
+    line-height: 2em;
+    font-size: 1em;
+    text-align: start;
+    justify-content: center;
+}
+
+.cookies h2,
+#summary-heading h1 {
     font-family: 'Patrick Hand SC', cursive;
     font-weight: 500;
     font-size: 2em;
