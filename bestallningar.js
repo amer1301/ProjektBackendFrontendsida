@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
   // 🔒 Kontrollera om användaren är inloggad (om JWT-token finns)
   const token = localStorage.getItem('token');
-if (!token) {
-  if (!window.location.href.includes('administration.html')) {
-    window.location.href = 'administration.html';
+  if (!token) {
+    if (!window.location.href.includes('administration.html')) {
+      window.location.href = 'administration.html';
+    }
+    return; // stoppa fortsatt körning
   }
-  return; // stoppa fortsatt körning
-}
-
 
   const container = document.getElementById("bestallningsContainer");
   const filterSelect = document.getElementById("filterCafe");
@@ -46,60 +44,60 @@ if (!token) {
     return new Date(`${match[1]}T${match[2]}`);
   }
 
-function renderOrders() {
-  const selectedCafe = filterSelect.value;
-  container.innerHTML = "";
+  function renderOrders() {
+    const selectedCafe = filterSelect.value;
+    container.innerHTML = "";
 
-  const filtered = selectedCafe
-    ? allOrders.filter(b => b.upphamtning.includes(selectedCafe))
-    : allOrders;
+    const filtered = selectedCafe
+      ? allOrders.filter(b => b.upphamtning.includes(selectedCafe))
+      : allOrders;
 
-  if (filtered.length === 0) {
-    container.innerHTML = "<p>Inga beställningar ännu.</p>";
-    return;
-  }
+    if (filtered.length === 0) {
+      container.innerHTML = "<p>Inga beställningar ännu.</p>";
+      return;
+    }
 
-  filtered.forEach((b, index) => {
-    const currentStatus = b.status; // ← Använd direkt från API
+    filtered.forEach((b, index) => {
+      const currentStatus = b.status;
 
-    const div = document.createElement("div");
-    div.className = "bestallning";
-    div.innerHTML = `
-      <h3>Beställning ${index + 1}</h3>
-      <p><strong>Namn:</strong> ${b.namn}</p>
-      <p><strong>Telefon:</strong> ${b.telefon}</p>
-      <p><strong>E-post:</strong> ${b.email}</p>
-      <p><strong>Bakverk:</strong> ${b.bakverk}</p>
-      <p><strong>Antal:</strong> ${b.antal}</p>
-      <p><strong>Meddelande:</strong> ${b.meddelande}</p>
-      <p><strong>Upphämtning:</strong> ${b.upphamtning}</p>
-      <p><strong>Datum:</strong> ${
-        new Date(b.skapad).toLocaleDateString('sv-SE') + ' ' +
-        new Date(b.skapad).toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' })
-      }</p>
-      <label for="status-${b._id}">Status:</label>
-      <select id="status-${b._id}" data-id="${b._id}">
-        <option value="påbörjad" ${currentStatus === 'påbörjad' ? 'selected' : ''}>Påbörjad</option>
-        <option value="klar" ${currentStatus === 'klar' ? 'selected' : ''}>Klar och väntar på upphämtning</option>
-        <option value="avklarad" ${currentStatus === 'avklarad' ? 'selected' : ''}>Upphämtad och avklarad</option>
-      </select>
-      <hr>
-    `;
-    container.appendChild(div);
+      const div = document.createElement("div");
+      div.className = "bestallning";
+      div.innerHTML = `
+        <h3>Beställning ${index + 1}</h3>
+        <p><strong>Namn:</strong> ${b.namn}</p>
+        <p><strong>Telefon:</strong> ${b.telefon}</p>
+        <p><strong>E-post:</strong> ${b.email}</p>
+        <p><strong>Bakverk:</strong> ${b.bakverk}</p>
+        <p><strong>Antal:</strong> ${b.antal}</p>
+        <p><strong>Meddelande:</strong> ${b.meddelande}</p>
+        <p><strong>Upphämtning:</strong> ${b.upphamtning}</p>
+        <p><strong>Datum:</strong> ${
+          new Date(b.skapad).toLocaleDateString('sv-SE') + ' ' +
+          new Date(b.skapad).toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' })
+        }</p>
+        <label for="status-${b._id}">Status:</label>
+       <select id="status-${b._id}" data-id="${b._id}">
+  <option value="inkommen" ${currentStatus === 'inkommen' ? 'selected' : ''}>Inkommen</option>
+  <option value="påbörjad" ${currentStatus === 'påbörjad' ? 'selected' : ''}>Påbörjad</option>
+  <option value="klar" ${currentStatus === 'klar' ? 'selected' : ''}>Klar och väntar på upphämtning</option>
+  <option value="avklarad" ${currentStatus === 'avklarad' ? 'selected' : ''}>Upphämtad och avklarad</option>
+</select>
+        <hr>
+      `;
+      container.appendChild(div);
 
-    const statusSelect = div.querySelector(`#status-${b._id}`);
-    statusSelect.addEventListener('change', (e) => {
-      const newStatus = e.target.value;
-      if (newStatus === 'avklarad') {
-        pendingDeleteId = b._id;
-        showModal(b._id);
-      } else {
-        updateOrderStatus(b._id, newStatus);
-      }
+      const statusSelect = div.querySelector(`#status-${b._id}`);
+      statusSelect.addEventListener('change', (e) => {
+        const newStatus = e.target.value;
+        if (newStatus === 'avklarad') {
+          pendingDeleteId = b._id;
+          showModal(b._id);
+        } else {
+          updateOrderStatus(b._id, newStatus);
+        }
+      });
     });
-  });
-}
-
+  }
 
   function showModal(orderId) {
     modal.style.display = 'block';
@@ -115,48 +113,46 @@ function renderOrders() {
     };
   }
 
-function deleteOrder(orderId) {
-  fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
-    method: 'DELETE'
-  }).then(response => {
-    if (response.ok) {
-      // Rensa bort sparad status för denna beställning
-      const statuses = JSON.parse(localStorage.getItem('orderStatuses')) || {};
-      delete statuses[orderId];
-      localStorage.setItem('orderStatuses', JSON.stringify(statuses));
+  function deleteOrder(orderId) {
+    fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
+      method: 'DELETE'
+    }).then(response => {
+      if (response.ok) {
+        // Rensa bort sparad status för denna beställning
+        const statuses = JSON.parse(localStorage.getItem('orderStatuses')) || {};
+        delete statuses[orderId];
+        localStorage.setItem('orderStatuses', JSON.stringify(statuses));
 
-      // Ta bort från den lokala listan och rendera om
-      allOrders = allOrders.filter(order => order._id !== orderId);
-      renderOrders();
-    } else {
-      alert('Något gick fel vid borttagning av beställningen.');
-    }
-  });
-}
-
-
-function updateOrderStatus(orderId, newStatus) {
-  fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
-    },
-    body: JSON.stringify({ status: newStatus })
-  })
-  .then(response => {
-    if (!response.ok) {
-      console.error("Kunde inte uppdatera status.");
-    } else {
-      // Uppdatera lokalt i allOrders så det återspeglas i UI direkt
-      const orderToUpdate = allOrders.find(o => o._id === orderId);
-      if (orderToUpdate) {
-        orderToUpdate.status = newStatus;
-        renderOrders(); // Rendra om listan
+        // Ta bort från den lokala listan och rendera om
+        allOrders = allOrders.filter(order => order._id !== orderId);
+        renderOrders();
+      } else {
+        alert('Något gick fel vid borttagning av beställningen.');
       }
-    }
-  });
-}
+    });
+  }
+
+  function updateOrderStatus(orderId, newStatus) {
+    fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({ status: newStatus })
+    })
+    .then(response => {
+      if (!response.ok) {
+        console.error("Kunde inte uppdatera status.");
+      } else {
+        const orderToUpdate = allOrders.find(o => o._id === orderId);
+        if (orderToUpdate) {
+          orderToUpdate.status = newStatus;
+          renderOrders();
+        }
+      }
+    });
+  }
 
   filterSelect.addEventListener("change", renderOrders);
 
