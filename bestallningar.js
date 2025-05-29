@@ -47,8 +47,6 @@ function renderOrders() {
   const selectedCafe = filterSelect.value;
   container.innerHTML = "";
 
-  const storedStatuses = JSON.parse(localStorage.getItem('orderStatuses')) || {};
-
   const filtered = selectedCafe
     ? allOrders.filter(b => b.upphamtning.includes(selectedCafe))
     : allOrders;
@@ -59,8 +57,7 @@ function renderOrders() {
   }
 
   filtered.forEach((b, index) => {
-    // Använd status från localStorage om den finns
-    const currentStatus = storedStatuses[b._id] || b.status;
+    const currentStatus = b.status; // ← Använd direkt från API
 
     const div = document.createElement("div");
     div.className = "bestallning";
@@ -138,22 +135,21 @@ function deleteOrder(orderId) {
 function updateOrderStatus(orderId, newStatus) {
   fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    },
     body: JSON.stringify({ status: newStatus })
   })
   .then(response => {
     if (!response.ok) {
       console.error("Kunde inte uppdatera status.");
     } else {
-      // Uppdatera localStorage
-      const storedStatuses = JSON.parse(localStorage.getItem('orderStatuses')) || {};
-      storedStatuses[orderId] = newStatus;
-      localStorage.setItem('orderStatuses', JSON.stringify(storedStatuses));
-
       // Uppdatera lokalt i allOrders så det återspeglas i UI direkt
       const orderToUpdate = allOrders.find(o => o._id === orderId);
       if (orderToUpdate) {
         orderToUpdate.status = newStatus;
+        renderOrders(); // Rendra om listan
       }
     }
   });
