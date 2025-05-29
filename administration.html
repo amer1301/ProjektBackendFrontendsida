@@ -19,19 +19,21 @@
 
 <body id="admin-page">
 
-  <header class="header">
-    <nav class="menu-nav" id="adminNav" aria-label="Adminnavigering" hidden>
-      <ul id="nav-menu">
-        <li><a href="kaféerSortiment.html"><img src="icons/donut3.png" alt="" class="nav-admin"> Meny</a></li>
-        <li><a href="administration.html"><img src="icons/donut4.png" alt="" class="nav-admin"> Menyhantering</a></li>
-        <li><a href="bestallningar.html"><img src="icons/donut5.png" alt="" class="nav-admin"> Beställningar</a></li>
-      </ul>
-      <ul id="nav-inlog">
-        <li><span id="welcomeText" aria-live="polite">Välkommen!</span></li>
-        <li><button id="logoutBtn2" class="logout-button" hidden>Logga ut</button></li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+<nav class="menu-nav admin-menu" id="adminNav" aria-label="Adminnavigering">
+ <button class="menu-toggle-admin" aria-label="Öppna adminmeny">&#9776;</button>
+    <ul id="nav-menu-admin" class="nav-menu-admin">
+      <li><a href="kaféerSortiment.html"><img src="icons/donut3.png" alt="" class="nav-admin" /> Meny</a></li>
+      <li><a href="administration.html"><img src="icons/donut4.png" alt="" class="nav-admin" /> Menyhantering</a></li>
+      <li><a href="bestallningar.html"><img src="icons/donut5.png" alt="" class="nav-admin" /> Beställningar</a></li>
+    </ul>
+    <ul id="nav-inlog" class="nav-inlog">
+      <li><span id="welcomeText" aria-live="polite">Välkommen!</span></li>
+      <li><button id="logoutBtn2" class="logout-button">Logga ut</button></li>
+    </ul>
+  </nav>
+</header>
+
 
   <!-- Inloggningsformulär -->
   <main>
@@ -116,6 +118,7 @@
   <!-- JavaScript -->
   <script src="admin.js" defer></script>
   <script src="menu.js" defer></script>
+  <script src="menu-nav.js" defer></script>
 <script src="bestallBakverk.js"></script>
   <script src="authHeader.js" defer></script>
 </body>

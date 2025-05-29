@@ -821,7 +821,39 @@ display: block;
   border: 0 !important;
 }
 
+.menu-toggle-admin {
+display: none;
+    background: none;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+}
 
+.nav-menu-admin {
+    display: flex;
+    list-style: none;
+    gap: 2em;
+    margin: 0;
+    padding: 1em;
+
+    a {
+        text-decoration: none;
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.4em;
+    font-style: normal;
+    }
+}
+
+.admin-menu.open-admin .nav-menu-admin {
+  display: flex;
+  margin-left: 1em;
+  margin-right: auto;
+  cursor: pointer;
+}
 @media (max-width: 1395px) {
 
     .cake img {
@@ -888,6 +920,28 @@ display: block;
 
     .cake-info h2 {
         font-size: 1.5em;
+    }
+}
+
+@media (max-width: 933px) {
+.menu-toggle-admin {
+        display: block;
+        margin-right: auto;
+    }
+    .nav-menu-admin {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #E8B5E6;
+        width: 30%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+        .menu-nav-admin.open #nav-menu-admin {
+        display: flex;
     }
 }
 
