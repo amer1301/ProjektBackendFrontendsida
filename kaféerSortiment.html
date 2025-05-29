@@ -2,43 +2,43 @@
 <html lang="sv">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icons/favicon-bakverk.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap"
-        rel="stylesheet">
-    <title>Ammis Bakverk</title>
-    <script src="adress.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="icons/favicon-bakverk.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap"
+    rel="stylesheet" />
+  <title>Ammis Bakverk</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+  <script src="adress.js" defer></script>
 </head>
 
 <body id="public-page">
+
+<!-- Header för gäster -->
 <header id="header-guest" class="header">
   <nav class="menu-nav">
     <ul id="nav-inlog" class="nav-inlog">
       <li><a href="administration.html">Logga in</a></li>
     </ul>
     <button class="menu-toggle" aria-label="Öppna meny">&#9776;</button>
-    <ul id="nav-menu">
+    <ul id="nav-menu" class="nav-menu">
       <li><a href="index.html">
           Startsida
-          <img src="icons/startsida.png" alt="ikon för startsidan" class="nav-cake">
+          <img src="icons/startsida.png" alt="ikon för startsidan" class="nav-cake" />
         </a></li>
       <li><a href="kaféerSortiment.html">
           Kaféer & Sortiment
-          <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" class="nav-slice">
+          <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" class="nav-slice" />
         </a></li>
       <li><a href="bestallBakverk.html">
           Beställ Bakverk
-          <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" class="nav-slice">
+          <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" class="nav-slice" />
         </a></li>
     </ul>
   </nav>
@@ -46,50 +46,64 @@
 
 <!-- Header för INLOGGAD, dold från början -->
 <header id="header-logged-in" class="header" style="display: none;">
-        <nav class="menu-nav">
-  <ul id="nav-menu">
-    <li><a href="kaféerSortiment.html">Meny<img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin"></a></li>
-    <li><a href="administration.html">Menyhantering<img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin"></a></li>
-    <li><a href="bestallningar.html">Beställningar<img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin"></a></li>
-  </ul>
+  <nav class="menu-nav">
+    <ul id="nav-menu-loggedin" class="nav-menu">
+      <li><a href="kaféerSortiment.html">Meny
+          <img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin" />
+        </a></li>
+      <li><a href="administration.html">Menyhantering
+          <img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin" />
+        </a></li>
+      <li><a href="bestallningar.html">Beställningar
+          <img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin" />
+        </a></li>
+    </ul>
 
-  <ul id="nav-inlog">
-    <li><span id="welcomeText">Välkommen!</span></li>
-    <li><button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button></li>
-  </ul>
-</nav>
-    </header>
+    <ul id="nav-inlog-loggedin" class="nav-inlog">
+      <li><span id="welcomeText">Välkommen!</span></li>
+      <li><button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button></li>
+    </ul>
+  </nav>
+</header>
 
-        <div class="adress">
-        <h1>Besök något av våra kaféer</h1><img src="icons/kartmarkering.png" alt="markör för plats"></div>
-        <section class="karta">
-<input type="text" id="locationInput" placeholder="Skriv ett län (t.ex. 'Skåne län')" />
-  <button onclick="findCafe()">Sök</button>
-      </section>
+ <!-- Besöksadress sektion -->
+  <section class="adress" aria-labelledby="adress-heading">
+    <h1 id="adress-heading">Besök något av våra kaféer</h1>
+    <img src="icons/kartmarkering.png" alt="markör för plats" />
+  </section>
 
-  <div id="result"></div>
-  <div id="map"></div>
+  <!-- Sökfunktion karta -->
+  <section class="karta" aria-label="Sök kaféer på karta">
+    <label for="locationInput" class="visually-hidden">Skriv ett län</label>
+    <input type="text" id="locationInput" placeholder="Skriv ett län (t.ex. 'Skåne län')" />
+    <button type="button" onclick="findCafe()">Sök</button>
+  </section>
 
-    <div class="menu">
-        <img src="images/meny.png">
-        <div class="overlaytext-menu">
-            <h1>Ammis</h1><img src="icons/donut2.png" alt="munk" class="munk">
-        </div>
-        <div class="overlaytext2-menu">
-            <h2>Meny</h2>
-            <p>Välj område och kafé ovan för att se aktuell meny nedan.</p>
-            <p>Vi har alltid ett stort urval av nybakat varje dag</p>
-            <div id="menuList"></div>
+  <div id="result" aria-live="polite" aria-atomic="true"></div>
+  <div id="map" role="region" aria-label="Karta över kaféer"></div>
 
-        </div>
+  <!-- Meny-sektion -->
+  <section class="menu" aria-labelledby="menu-heading">
+    <img src="images/meny.png" alt="" aria-hidden="true" />
+    <div class="overlaytext-menu">
+      <h1 id="menu-heading">Ammis</h1>
+      <img src="icons/donut2.png" alt="munk" class="munk" />
     </div>
+    <div class="overlaytext2-menu">
+      <h2>Meny</h2>
+      <p>Välj område och kafé ovan för att se aktuell meny nedan.</p>
+      <p>Vi har alltid ett stort urval av nybakat varje dag</p>
+      <div id="menuList"></div>
+    </div>
+  </section>
 
-    <footer>
-        <p>Vill du veta mer? Kontakta oss på telefonnummer 08 123 45 67</p>
-    </footer>
-    <script src="menu.js" defer></script>
-    <script src="adress.js" defer></script>
-<script src="authHeader.js" defer></script>
+  <footer>
+    <p>Vill du veta mer? Kontakta oss på telefonnummer 08 123 45 67</p>
+  </footer>
+
+  <script src="menu.js" defer></script>
+  <script src="authHeader.js" defer></script>
 
 </body>
+
 </html>

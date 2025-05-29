@@ -2,121 +2,132 @@
 <html lang="sv">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="icons/favicon-bakverk.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&display=swap"
-        rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap" rel="stylesheet">
-        <title>Ammis Bakverk</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icons/favicon-bakverk.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap"
+    rel="stylesheet" />
+  <title>Ammis Bakverk</title>
 </head>
 
 <body>
-    <header class="header">
-        <nav class="menu-nav">
-          <ul id="nav-inlog" class="nav-inlog">
-      <li><a href="administration.html">Logga in</a></li>
-    </ul>
+    <!-- Header för gäster -->
+  <header class="header">
+    <nav class="menu-nav">
+      <ul id="nav-inlog" class="nav-inlog">
+        <li><a href="administration.html">Logga in</a></li>
+      </ul>
 
-  <button class="menu-toggle" aria-label="Öppna meny">&#9776;</button>
+      <button class="menu-toggle" aria-label="Öppna meny">&#9776;</button>
 
-            <ul id="nav-menu">
-                        <li><a href="index.html">
-                        Startsida
-                        <img src="icons/startsida.png" alt="ikon för startsidan" class="nav-cake">
-                    </a></li>
-                <li><a href="kaféerSortiment.html">
-                        Kaféer & Sortiment
-                        <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" class="nav-slice">
-                    </a></li>
-                <li><a href="bestallBakverk.html">
-                        Beställ Bakverk
-                        <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" class="nav-slice">
-                    </a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="image-firstpage">
-        <img src="images/katt_tarta.webp" alt="liten tjej som öppnar paket bredvid en tårta">
-        <div class="overlay-text1">Ammis</div>
-        <div class="overlay-text2">Bakverk & Kafé</div>
-        <div class="overlay-text3">Redo för kalas?</div>
-        <div class="overlay-text4">Beställ dina bakverk hos oss!</div>
-    </section>
+      <ul id="nav-menu">
+        <li>
+          <a href="index.html">
+            Startsida
+            <img src="icons/startsida.png" alt="ikon för startsidan" class="nav-cake" />
+          </a>
+        </li>
+        <li>
+          <a href="kaféerSortiment.html">
+            Kaféer & Sortiment
+            <img src="icons/slice.png" alt="ikon för Kaféer och sortiment" class="nav-slice" />
+          </a>
+        </li>
+        <li>
+          <a href="bestallBakverk.html">
+            Beställ Bakverk
+            <img src="icons/slicecoco.png" alt="ikon för beställa bakverk" class="nav-slice" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="cookies">
-        <h1>Kakor som alltid finns inne på våra kaféer</h1><img src="icons/cakeslice3.png" alt="ikon för kakor" class="headline-slice">
-    </div>
+<section class="image-firstpage">
+  <h2 class="visually-hidden">Startsida - Välkommen till Ammis Bakverk</h2>
+  <img src="images/katt_tarta.webp" alt="liten tjej som öppnar paket bredvid en tårta" />
+  <div class="overlay-text1">Ammis</div>
+  <div class="overlay-text2">Bakverk & Kafé</div>
+  <div class="overlay-text3">Redo för kalas?</div>
+  <div class="overlay-text4">Beställ dina bakverk hos oss!</div>
+</section>
 
-<section class="images-cookies">
-  <div class="cookie-item">
-    <div class="image-wrapper">
-      <img src="images/macaroons2.webp" alt="macaroons">
-      <div class="image-text">Macaroons</div>
-    </div>
-    <p>25 kr/kaka</p>
+
+  <div class="cookies">
+    <h1>Kakor som alltid finns inne på våra kaféer</h1>
+    <img src="icons/cakeslice3.png" alt="ikon för kakor" class="headline-slice" />
   </div>
 
-  <div class="cookie-item">
-    <div class="image-wrapper">
-      <img src="images/nutellacookies2.webp" alt="nutellakakor">
-      <div class="image-text">Nutellakakor</div>
-    </div>
-    <p>15 kr/kaka</p>
+  <section class="images-cookies" aria-label="Kakor och priser">
+    <article class="cookie-item">
+      <div class="image-wrapper">
+        <img src="images/macaroons2.webp" alt="Macaroons" />
+        <h3 class="image-text">Macaroons</h3>
+      </div>
+      <p>25 kr/kaka</p>
+    </article>
+
+    <article class="cookie-item">
+      <div class="image-wrapper">
+        <img src="images/nutellacookies2.webp" alt="Nutellakakor" />
+        <h3 class="image-text">Nutellakakor</h3>
+      </div>
+      <p>15 kr/kaka</p>
+    </article>
+
+    <article class="cookie-item">
+      <div class="image-wrapper">
+        <img src="images/subway_cookies.webp" alt="Chocolate chip cookies" />
+        <h3 class="image-text">Chocolate chip cookies</h3>
+      </div>
+      <p>20 kr/kaka</p>
+    </article>
+
+    <article class="cookie-item">
+      <div class="image-wrapper">
+        <img src="images/cakesicles.webp" alt="Cakesicles" />
+        <h3 class="image-text">Cakesicles</h3>
+      </div>
+      <p>35 kr/kaka</p>
+    </article>
+
+    <article class="cookie-item">
+      <div class="image-wrapper">
+        <img src="images/cupcakes2.webp" alt="Cupcakes" />
+        <h3 class="image-text">Cupcakes</h3>
+      </div>
+      <p>20 kr/kaka</p>
+    </article>
+
+    <article class="cookie-item">
+      <div class="image-wrapper">
+        <img src="images/hallongrottor.webp" alt="Hallongrottor" />
+        <h3 class="image-text">Hallongrottor</h3>
+      </div>
+      <p>10 kr/kaka</p>
+    </article>
+  </section>
+
+  <div class="cake-info">
+    <h2>Gör din egen beställning av tårta minst 3 arbetsdagar innan avhämtning</h2>
+    <img src="icons/cakeslice4.png" alt="ikon för tårta" class="headline-slice" />
   </div>
 
-  <div class="cookie-item">
-    <div class="image-wrapper">
-      <img src="images/subway_cookies.webp" alt="chocolate chip cookies">
-      <div class="image-text">Chocolate chip cookies</div>
-    </div>
-    <p>20 kr/kaka</p>
-  </div>
-
-  <div class="cookie-item">
-    <div class="image-wrapper">
-      <img src="images/cakesicles.webp" alt="macaroons">
-      <div class="image-text">Cakesicles</div>
-    </div>
-    <p>35 kr/kaka</p>
-  </div>
-
-  <div class="cookie-item">
-    <div class="image-wrapper">
-      <img src="images/cupcakes2.webp" alt="cupcakes">
-      <div class="image-text">Cupcakes</div>
-    </div>
-    <p>20 kr/kaka</p>
-  </div>
-  
-  <div class="cookie-item">
-    <div class="image-wrapper">
-      <img src="images/hallongrottor.webp" alt="hallongrottor">
-      <div class="image-text">Hallongrottor</div>
-    </div>
-    <p>10 kr/kaka</p>
-  </div>
-      </section>
-
-    <div class="cake-info">
-        <h2>Gör din egen beställning av tårta minst 3 arbetsdagar innan avhämtning</h2><img src="icons/cakeslice4.png" alt="ikon för tårta" class="headline-slice">
-    </div>
-
-<div class="cake">
-    <img src="images/sjojungfru_tarta.webp" alt="tårta med sjöjungfru-tema">
+  <div class="cake">
+    <img src="images/sjojungfru_tarta.webp" alt="tårta med sjöjungfru-tema" />
     <p>Tårta, specialbeställning från 350 kr/tårta</p>
-</div>
+  </div>
 
-<footer>
-        <p>Vill du veta mer? Kontakta oss på telefonnummer 08 123 45 67</p>
-</footer>
-    <script src="menu-nav.js"></script>
-    <script src="image-optimizer.js"></script>
+  <footer>
+    <p>Vill du veta mer? Kontakta oss på telefonnummer 08 123 45 67</p>
+  </footer>
 
+  <script src="menu-nav.js"></script>
+  <script src="image-optimizer.js"></script>
 </body>
 
 </html>

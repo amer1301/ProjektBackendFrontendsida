@@ -2,109 +2,123 @@
 <html lang="sv">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icons/favicon-bakverk.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&display=swap"
-        rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap" rel="stylesheet">
-    <title>Ammis Bakverk</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ammis Bakverk - Admin</title>
+
+  <link rel="icon" href="icons/favicon-bakverk.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Preconnect för Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato&family=MonteCarlo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patrick+Hand+SC&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
-    <body id="admin-page">
-    <header class="header">
-        <nav class="menu-nav" id="adminNav" style="display: none;">
-  <ul id="nav-menu">
-    <li><a href="kaféerSortiment.html">Meny<img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin"></a></li>
-    <li><a href="administration.html">Menyhantering<img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin"></a></li>
-    <li><a href="bestallningar.html">Beställningar<img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin"></a></li>
-  </ul>
+<body id="admin-page">
 
-  <ul id="nav-inlog">
-    <li><span id="welcomeText">Välkommen!</span></li>
-    <li><button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button></li>
-  </ul>
-</nav>
-    </header>
+  <header class="header">
+    <nav class="menu-nav" id="adminNav" aria-label="Adminnavigering" hidden>
+      <ul id="nav-menu">
+        <li><a href="kaféerSortiment.html"><img src="icons/donut3.png" alt="" class="nav-admin"> Meny</a></li>
+        <li><a href="administration.html"><img src="icons/donut4.png" alt="" class="nav-admin"> Menyhantering</a></li>
+        <li><a href="bestallningar.html"><img src="icons/donut5.png" alt="" class="nav-admin"> Beställningar</a></li>
+      </ul>
+      <ul id="nav-inlog">
+        <li><span id="welcomeText" aria-live="polite">Välkommen!</span></li>
+        <li><button id="logoutBtn2" class="logout-button" hidden>Logga ut</button></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Inloggningsformulär -->
-<form id="loginFormCustom" action="/login" method="POST" style="display: none;">
-    <h1>Administrationspanel</h1>
-  <label for="usernameCustom">Användarnamn:</label>
-  <input
-    type="text"
-    id="usernameCustom"
-    class="input-custom"
-    placeholder="Användarnamn"
-    name="username"
-    autocomplete="username"
-    required
-  >
+  <main>
+    <section aria-labelledby="adminLogin">
+      <form id="loginFormCustom" action="/login" method="POST" hidden novalidate>
+        <h1 id="adminLogin">Administrationspanel</h1>
 
-  <label for="passwordCustom">Lösenord:</label>
-  <input
-    type="password"
-    id="passwordCustom"
-    class="input-custom"
-    placeholder="Lösenord"
-    name="password"
-    autocomplete="current-password"
-    required
-  >
+        <label for="usernameCustom">Användarnamn:</label>
+        <input
+          type="text"
+          id="usernameCustom"
+          name="username"
+          class="input-custom"
+          placeholder="Användarnamn"
+          autocomplete="username"
+          required
+        >
 
-  <button type="submit">Logga in</button>
-</form>
+        <label for="passwordCustom">Lösenord:</label>
+        <input
+          type="password"
+          id="passwordCustom"
+          name="password"
+          class="input-custom"
+          placeholder="Lösenord"
+          autocomplete="current-password"
+          required
+        >
 
-<div id="message" class="hidden"></div>
+        <button type="submit">Logga in</button>
+      </form>
 
-
-  <!-- Administrationssektion (kommer visas när användaren är inloggad) -->
-  <section id="admin-section" style="display: none;">
-    <h2>Menyhantering</h2>
-
-    <form id="addForm">
-      <select id="cafe" required>
-  <option value="" disabled selected>Välj kafé</option>
-  <option value="stockholm">Stockholm</option>
-    <option value="göteborg">Göteborg</option>
-  <option value="malmö">Malmö</option>
-  <option value="umeå">Umeå</option>
-  <option value="luleå">Luleå</option>
-  <option value="uppsala">Uppsala</option>
-  <option value="norrköping">Norrköping</option>
-  <option value="växjö">Växjö</option>
-  <option value="karlstad">Karlstad</option>
-  <option value="örebro">Örebro</option>
-  <option value="sundsvall">Sundsvall</option>
-</select>
-      <input type="text" id="name" placeholder="Namn på bakverk" required>
-      <input type="number" id="price" placeholder="Pris" required>
-
-       <select id="category" required>
-    <option value="" disabled selected>Välj kategori</option>
-    <option value="tårta">Tårta</option>
-    <option value="kaka">Kaka</option>
-    <option value="bakelse">Bakelse</option>
-    <option value="bröd">Bröd</option>
-  </select>
-
-      <button type="submit">Lägg till bakverk</button>
-    </form>
-  </section>
-
-  <section class="added-menu">
-    <h3 id="cafeNameTitle"></h3>
-    <ul id="menuList"></ul>
+      <div id="message" class="hidden" role="alert" aria-live="assertive"></div>
     </section>
 
+    <!-- Adminsektion visas efter inloggning -->
+    <section id="admin-section" hidden>
+      <h2>Menyhantering</h2>
 
-<script src="admin.js" defer></script>
+      <form id="addForm" aria-label="Lägg till nytt bakverk">
+        <label for="cafe">Välj kafé:</label>
+        <select id="cafe" required>
+          <option value="" disabled selected>Välj kafé</option>
+          <option value="stockholm">Stockholm</option>
+          <option value="göteborg">Göteborg</option>
+          <option value="malmö">Malmö</option>
+          <option value="umeå">Umeå</option>
+          <option value="luleå">Luleå</option>
+          <option value="uppsala">Uppsala</option>
+          <option value="norrköping">Norrköping</option>
+          <option value="växjö">Växjö</option>
+          <option value="karlstad">Karlstad</option>
+          <option value="örebro">Örebro</option>
+          <option value="sundsvall">Sundsvall</option>
+        </select>
+
+        <label for="name">Bakverkets namn:</label>
+        <input type="text" id="name" placeholder="Namn på bakverk" required>
+
+        <label for="price">Pris (SEK):</label>
+        <input type="number" id="price" placeholder="Pris" min="0" step="1" required>
+
+        <label for="category">Kategori:</label>
+        <select id="category" required>
+          <option value="" disabled selected>Välj kategori</option>
+          <option value="tårta">Tårta</option>
+          <option value="kaka">Kaka</option>
+          <option value="bakelse">Bakelse</option>
+          <option value="bröd">Bröd</option>
+        </select>
+
+        <button type="submit">Lägg till bakverk</button>
+      </form>
+    </section>
+
+    <section class="added-menu" aria-labelledby="addedMenuTitle">
+      <h3 id="addedMenuTitle">Aktuell meny</h3>
+      <ul id="menuList" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="admin.js" defer></script>
   <script src="menu.js" defer></script>
-<script src="bakverk.js" defer></script>
-<script src="authHeader.js" defer></script>
+<script src="bestallningar.js"></script>
+<script src="bestallBakverk.js"></script>
+  <script src="authHeader.js" defer></script>
 </body>
+
 </html>

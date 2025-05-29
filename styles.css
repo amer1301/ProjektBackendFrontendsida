@@ -16,10 +16,6 @@ body {
     position: relative;
 }
 
-#nav-menu {
-    list-style-type: none;
-    display: flex;
-}
 
 #nav-inlog {
     list-style-type: none;
@@ -27,6 +23,32 @@ body {
   margin-left: 1em;
   padding: 0;
   gap: 1.5em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2em;
+    margin: 0;
+    padding: 1em;
+
+    a {
+        text-decoration: none;
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.4em;
+    font-style: normal;
+    }
+}
+
+.nav-inlog {
+    list-style-type: none;
+    display: flex;
+    margin-left: 1em;
+    padding: 0;
+    gap: 1.5em;
 }
 
 #nav-menu a {
@@ -53,7 +75,7 @@ body {
     height: auto;
 }
 
-#nav-inlog a {
+.nav-inlog a {
     text-decoration: none;
     color: black;
     font-family: 'Patrick Hand SC', cursive;
@@ -431,6 +453,17 @@ label {
     width: 150px;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+}
+
+#filterDescription {
+    font-weight: bold;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 input,
@@ -581,7 +614,7 @@ select {
     h2 {
         color: rgb(0, 0, 0);
         font-family: 'Patrick Hand SC', cursive;
-        font-size: 1.5em;
+        font-size: 2em;
         text-align: center;
         margin-bottom: 2em;
     }
@@ -642,6 +675,11 @@ select {
     width: 700px;
     box-sizing: border-box;
     margin-bottom: 2em;
+    h3 {
+            font-family: 'Patrick Hand SC', cursive;
+    font-weight: 500;
+    font-size: 2em;
+    }
 }
 
 #cafeNameTitle {
@@ -734,7 +772,7 @@ height: auto;
 display: block;
     margin: 2em auto;
     width: 100%;
-    max-width: 220px;
+    max-width: 250px;
     height: 3em;
 }
 
@@ -756,6 +794,18 @@ display: block;
   outline: none;
   border-color: #f080cc;
   box-shadow: 0 0 0 2px rgba(240, 128, 128, 0.2);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 

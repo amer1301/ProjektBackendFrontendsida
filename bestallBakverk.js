@@ -1,7 +1,7 @@
 function isTimeValid(timeStr) {
   const [hours, minutes] = timeStr.split(":").map(Number);
   if (hours < 10 || hours > 17) return false;
-  if (hours === 17 && minutes > 0) return false; // max 17:00 exakt
+  if (hours === 17 && minutes > 0) return false;
   return true;
 }
 
@@ -10,6 +10,25 @@ function formatDateToLocalISO(date) {
   const mm = String(date.getMonth() + 1).padStart(2, '0');
   const dd = String(date.getDate()).padStart(2, '0');
   return `${yyyy}-${mm}-${dd}`;
+}
+
+function showError(input, message) {
+  let errorElem = input.nextElementSibling;
+  if (!errorElem || !errorElem.classList.contains('error-message')) {
+    errorElem = document.createElement('div');
+    errorElem.className = 'error-message';
+    input.parentNode.insertBefore(errorElem, input.nextSibling);
+  }
+  errorElem.textContent = message;
+  input.setAttribute('aria-invalid', 'true');
+}
+
+function clearError(input) {
+  let errorElem = input.nextElementSibling;
+  if (errorElem && errorElem.classList.contains('error-message')) {
+    errorElem.textContent = '';
+  }
+  input.removeAttribute('aria-invalid');
 }
 
 function initFormPage() {
@@ -29,22 +48,72 @@ function initFormPage() {
   upphamtningTid.min = "10:00";
   upphamtningTid.max = "17:00";
 
+  upphamtningDatum.addEventListener('input', () => {
+    if (upphamtningDatum.value < upphamtningDatum.min) {
+      showError(upphamtningDatum, 'Datum måste vara minst 3 dagar fram i tiden.');
+    } else {
+      clearError(upphamtningDatum);
+    }
+  });
+
+  upphamtningTid.addEventListener('input', () => {
+    if (!isTimeValid(upphamtningTid.value)) {
+      showError(upphamtningTid, 'Tid måste vara mellan 10:00 och 17:00.');
+    } else {
+      clearError(upphamtningTid);
+    }
+  });
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     messageBox.textContent = "";
     messageBox.className = "form-message";
 
+    if (!form.namn.value.trim()) {
+      showError(form.namn, 'Ange ditt namn.');
+      messageBox.textContent = "❌ Namn är obligatoriskt.";
+      messageBox.classList.add("error");
+      return;
+    } else {
+      clearError(form.namn);
+    }
+
+    const telefonVal = form.telefon.value.trim();
+    if (!/^\d{10}$/.test(telefonVal)) {
+      showError(form.telefon, 'Telefonnummer måste innehålla exakt 10 siffror.');
+      messageBox.textContent = "❌ Vänligen ange ett giltigt telefonnummer med 10 siffror.";
+      messageBox.classList.add("error");
+      return;
+    } else {
+      clearError(form.telefon);
+    }
+
+    if (!form.email.checkValidity()) {
+      showError(form.email, 'Ange en giltig e-postadress.');
+      messageBox.textContent = "❌ Vänligen ange en giltig e-postadress.";
+      messageBox.classList.add("error");
+      return;
+    } else {
+      clearError(form.email);
+    }
+
     if (upphamtningDatum.value < upphamtningDatum.min) {
+      showError(upphamtningDatum, 'Datum måste vara minst 3 dagar fram i tiden.');
       messageBox.textContent = "❌ Vänligen välj ett datum som är minst 3 dagar framåt i tiden.";
       messageBox.classList.add("error");
       return;
+    } else {
+      clearError(upphamtningDatum);
     }
 
-    if (upphamtningTid.value < "10:00" || upphamtningTid.value > "17:00") {
+    if (!isTimeValid(upphamtningTid.value)) {
+      showError(upphamtningTid, 'Tid måste vara mellan 10:00 och 17:00.');
       messageBox.textContent = "❌ Vänligen välj en tid mellan 10:00 och 17:00.";
       messageBox.classList.add("error");
       return;
+    } else {
+      clearError(upphamtningTid);
     }
 
     const data = {
@@ -79,5 +148,6 @@ function initFormPage() {
     }
   });
 }
+
 
 initFormPage();
