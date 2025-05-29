@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Endast bilder från images/-mappen ersätts
     if (src && src.startsWith('images/')) {
       const fileName = src.split('/').pop();
-      const fallbackSrc = `http://localhost:5000/images/${fileName}`;
+      const fallbackSrc = `https://projektbackendapi.onrender.com/images/${fileName}`;
 
       // Skapa <picture>-elementet
       const picture = document.createElement('picture');

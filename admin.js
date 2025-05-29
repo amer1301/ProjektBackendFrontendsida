@@ -28,7 +28,7 @@ loginForm.addEventListener('submit', async (e) => {
 
 // Inloggningsfunktion
 async function login(username, password) {
-  const response = await fetch('http://localhost:5000/api/auth/login', {
+  const response = await fetch('https://projektbackendapi.onrender.com/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })
@@ -53,7 +53,7 @@ async function getProtectedData() {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/protected', {
+    const response = await fetch('https://projektbackendapi.onrender.com/api/auth/protected', {
       method: 'GET',
       headers: { 'Authorization': `Bearer ${token}` }
     });

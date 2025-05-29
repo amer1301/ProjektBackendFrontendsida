@@ -127,7 +127,7 @@ function initFormPage() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/bestallningar", {
+      const res = await fetch("https://projektbackendapi.onrender.com/api/bestallningar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

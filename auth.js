@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://projektbackendapi.onrender.com/api/auth';
 
 // Funktion för att logga in och spara JWT
 async function login(username, password) {

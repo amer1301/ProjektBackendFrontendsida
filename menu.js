@@ -4,7 +4,7 @@ const addedMenuSection = document.querySelector('.added-menu');
 // Hämta menyobjekt för alla kaféer (administration)
 async function loadMenuItems() {
   try {
-    const response = await fetch('http://localhost:5000/api/menu/menu-items');
+    const response = await fetch('https://projektbackendapi.onrender.com/api/menu/menu-items');
     if (response.ok) {
       const menuItems = await response.json();
       renderMenuItems(menuItems);
@@ -19,7 +19,7 @@ async function loadMenuItems() {
 // Hämta menyobjekt för ett specifikt kafé (kafésida)
 async function loadMenuForCafe(cafeName) {
   try {
-    const response = await fetch(`http://localhost:5000/api/menu/menu-items/${cafeName}`);
+    const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${cafeName}`);
     if (response.ok) {
       const menuItems = await response.json();
       renderMenuItems(menuItems);
@@ -105,7 +105,7 @@ function renderMenuItems(menuItems) {
 // Ta bort menyobjekt via API
 async function deleteMenuItem(itemId) {
   try {
-    const response = await fetch(`http://localhost:5000/api/menu/menu-items/${itemId}`, {
+    const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${itemId}`, {
       method: 'DELETE'
     });
 
@@ -152,7 +152,7 @@ if (form) {
     const newItem = { name, price, category, cafe };
 
     try {
-      const response = await fetch('http://localhost:5000/api/menu/menu-items', {
+      const response = await fetch('https://projektbackendapi.onrender.com/api/menu/menu-items', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newItem)

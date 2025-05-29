@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchAndRenderOrders() {
     try {
-      const response = await fetch("http://localhost:5000/api/bestallningar");
+      const response = await fetch("https://projektbackendapi.onrender.com/api/bestallningar");
       const data = await response.json();
 
       allOrders = sortOrdersByPickupTime(data);
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteOrder(orderId) {
-    fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
+    fetch(`https://projektbackendapi.onrender.com/api/bestallningar/${orderId}`, {
       method: 'DELETE'
     }).then(response => {
       if (response.ok) {
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateOrderStatus(orderId, newStatus) {
-    fetch(`http://localhost:5000/api/bestallningar/${orderId}`, {
+    fetch(`https://projektbackendapi.onrender.com/api/bestallningar/${orderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
