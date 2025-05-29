@@ -338,6 +338,7 @@ h1 {
         font-size: 1.5em;
         text-align: 2em;
         text-align: center;
+        max-width: 70ch;
     }
 }
 
@@ -690,7 +691,7 @@ select {
     margin-bottom: 2em;
     h3 {
             font-family: 'Patrick Hand SC', cursive;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 2em;
     }
 }
@@ -828,6 +829,7 @@ display: none;
     border: none;
     cursor: pointer;
     color: #000000;
+    padding: 0 0.5em;
 }
 
 .nav-menu-admin {
@@ -858,6 +860,35 @@ display: none;
 
     .cake img {
         width: 60em;
+    }
+}
+
+@media (max-width: 1052px) {
+    .menu img {
+        width: 90%;
+    }
+
+    .menu-item img {
+        width: 2em;
+    height: auto;
+    }
+
+    .overlaytext2-menu h2 {
+        font-size: 1.5em;
+        margin-top: 9em;
+    }
+
+    h1#menu-heading {
+        font-size: 1.5em;
+    }
+
+    li.menu-item {
+        font-size: 0.8em;
+    }
+
+    img.munk {
+        width: auto;
+        height: 2em;
     }
 }
 
@@ -924,6 +955,14 @@ display: none;
 }
 
 @media (max-width: 933px) {
+    .overlaytext2-menu p {
+        max-width: 50ch;
+    }
+
+    .menu-item {
+    gap: 0.2em;
+    }
+
 .menu-toggle-admin {
         display: block;
         margin-right: auto;
@@ -977,7 +1016,44 @@ display: none;
 }
 }
 
+@media (max-width: 786px) {
+    .overlaytext-menu {
+    font-size: 2em;
+}
+
+.overlaytext2-menu h2 {
+        font-size: 1.2em;
+        margin-top: 6em;
+    }
+
+    .overlaytext2-menu p {
+        font-size: 1em;
+}
+
+    li.menu-item {
+        font-size: 0.6em;
+    }
+
+    h1 {
+    font-size: 1.3em;
+    }
+
+    .adress img {
+        width: auto;
+        height: 2em;
+    }
+
+    #result {
+        font-size: 1em;
+    }
+}
+
+
 @media (max-width: 746px) {
+
+    .added-menu {
+width: 90%;
+}
 
     .cake img {
         width: 35em;
@@ -1010,6 +1086,12 @@ display: none;
         }
 }
 
+@media (max-width: 668px) {
+    img.nav-admin {
+        display: none;
+    }
+}
+
 @media (max-width: 619px) {
             #nav-menu {
         width: 45%;
@@ -1031,6 +1113,10 @@ display: none;
     font-size: 1.5em;
 }
 
+#locationInput {
+    padding: 1em;
+    width: 8em;
+}
 .cookie-item p,
 .cake p {
     font-size: 1em;
@@ -1054,8 +1140,38 @@ display: none;
     }
 }
 
-@media (max-width: 512px) {
+@media (max-width: 553px) {
+    .overlaytext2-menu p {
+        max-width: 30ch;
+}
+}
 
+@media (max-width: 530px) {
+    #addForm input, #addForm select, #addForm button {
+    max-width: 170px;
+}
+
+#addForm button {
+    align-self: center;
+    margin: 2em auto;
+}
+
+#admin-section {
+    width: 90%;
+}
+
+#map {
+    height: 300px;
+    margin-top: 2em;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+}
+}
+
+@media (max-width: 512px) {
+        #addForm input, #addForm select, #addForm button {
+    max-width: 200px
+}
         .cookie-item {
         width: 75%;
     }
@@ -1068,6 +1184,27 @@ display: none;
     .cake img {
         width: 80%;
     }
+
+    #menuList {
+    font-size: 1.2em;
+}
+
+#welcomeText,
+#admin-section h2,
+label,
+.added-menu h3 { 
+    font-size: 1.2em;
+}
+
+.admin-menu.open-admin .nav-menu-admin {
+    font-size: 0.8em;
+}
+
+.logout-button {
+    margin-right: 0.5em;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
 }
 
 @media (max-width: 454px) {
@@ -1091,6 +1228,25 @@ display: none;
     }
 
     .cookie-item p, .cake p {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 405px) {
+h1#menu-heading {
+        font-size: 1.2em;
+    }
+
+        img.munk {
+        width: auto;
+        height: 1.6em;
+    }
+
+        .overlaytext2-menu h2 {
+        font-size: 1em;
+        margin-top: 5.5em;
+    }
+
+        .overlaytext2-menu p {
         font-size: 0.8em;
     }
 }

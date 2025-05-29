@@ -46,25 +46,22 @@
 
 <!-- Header för INLOGGAD, dold från början -->
 <header id="header-logged-in" class="header" style="display: none;">
-  <nav class="menu-nav">
-    <ul id="nav-menu-loggedin" class="nav-menu">
-      <li><a href="kaféerSortiment.html">Meny
-          <img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin" />
-        </a></li>
-      <li><a href="administration.html">Menyhantering
-          <img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin" />
-        </a></li>
-      <li><a href="bestallningar.html">Beställningar
-          <img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin" />
-        </a></li>
+  <nav class="menu-nav admin-menu" id="adminNavLoggedIn" aria-label="Adminnavigering">
+    <button class="menu-toggle-admin" aria-label="Öppna adminmeny">&#9776;</button>
+
+    <ul id="nav-menu-admin-loggedin" class="nav-menu-admin">
+      <li><a href="kaféerSortiment.html"><img src="icons/donut3.png" alt="ikon för admins meny" class="nav-admin" /> Meny</a></li>
+      <li><a href="administration.html"><img src="icons/donut4.png" alt="ikon för admins administrationsportal" class="nav-admin" /> Menyhantering</a></li>
+      <li><a href="bestallningar.html"><img src="icons/donut5.png" alt="ikon för admins beställningsportal" class="nav-admin" /> Beställningar</a></li>
     </ul>
 
-    <ul id="nav-inlog-loggedin" class="nav-inlog">
-      <li><span id="welcomeText">Välkommen!</span></li>
-      <li><button id="logoutBtn2" class="logout-button" style="display: none;">Logga ut</button></li>
+    <ul id="nav-inlog" class="nav-inlog">
+      <li><span id="welcomeText" aria-live="polite">Välkommen!</span></li>
+      <li><button id="logoutBtn2" class="logout-button">Logga ut</button></li>
     </ul>
   </nav>
 </header>
+
 
  <!-- Besöksadress sektion -->
   <section class="adress" aria-labelledby="adress-heading">
@@ -84,15 +81,20 @@
 
   <!-- Meny-sektion -->
   <section class="menu" aria-labelledby="menu-heading">
+  <picture>
+    <!-- Bild för små skärmar (upp till 552px) -->
+    <source srcset="images/meny2.png" media="(max-width: 553px)">
+    
+    <!-- Standardbild för större skärmar -->
     <img src="images/meny.png" alt="" aria-hidden="true" />
+  </picture>
     <div class="overlaytext-menu">
       <h1 id="menu-heading">Ammis</h1>
       <img src="icons/donut2.png" alt="munk" class="munk" />
     </div>
     <div class="overlaytext2-menu">
       <h2>Meny</h2>
-      <p>Välj område och kafé ovan för att se aktuell meny nedan.</p>
-      <p>Vi har alltid ett stort urval av nybakat varje dag</p>
+      <p>Välj område och kafé ovan för att se aktuell meny nedan. Vi har alltid ett stort urval av nybakat varje dag</p>
       <div id="menuList"></div>
     </div>
   </section>
@@ -103,6 +105,7 @@
 
   <script src="menu.js" defer></script>
   <script src="authHeader.js" defer></script>
+    <script src="menu-nav.js" defer></script>
 
 </body>
 
