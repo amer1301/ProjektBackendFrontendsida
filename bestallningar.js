@@ -2,10 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // 🔒 Kontrollera om användaren är inloggad (om JWT-token finns)
   const token = localStorage.getItem('token');
-  if (!token) {
+if (!token) {
+  if (!window.location.href.includes('administration.html')) {
     window.location.href = 'administration.html';
-    return; // stoppa fortsatt körning av sidan
   }
+  return; // stoppa fortsatt körning
+}
+
 
   const container = document.getElementById("bestallningsContainer");
   const filterSelect = document.getElementById("filterCafe");

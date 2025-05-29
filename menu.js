@@ -39,16 +39,15 @@ function renderMenuItems(menuItems) {
   const isAdminPage = document.body.id === 'admin-page';
   menuContainer.innerHTML = '';
 
-if (menuItems.length > 0) {
-  if (isAdminPage && cafeNameTitle) {
-    cafeNameTitle.textContent = `Ammis bakverk i: ${menuItems[0].cafe}`;
+  if (menuItems.length > 0) {
+    if (isAdminPage && cafeNameTitle) {
+      cafeNameTitle.textContent = `Ammis bakverk i: ${menuItems[0].cafe}`;
+    }
+  } else {
+    if (isAdminPage && cafeNameTitle) {
+      cafeNameTitle.textContent = 'Inga bakverk tillagda ännu för valt kafé.';
+    }
   }
-} else {
-  if (isAdminPage && cafeNameTitle) {
-    cafeNameTitle.textContent = 'Inga bakverk tillagda ännu för valt kafé.';
-  }
-}
-
 
   menuItems.forEach(item => {
     const listItem = document.createElement('li');
@@ -60,18 +59,22 @@ if (menuItems.length > 0) {
     listItem.appendChild(textSpan);
 
     if (isAdminPage) {
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = 'Ta bort';
-      deleteButton.classList.add('delete-button');
-      deleteButton.style.marginLeft = '1em';
+      // Visa "Ta bort"-knapp ENDAST om item.fixed är falskt/undefined
+      if (!item.fixed) {
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Ta bort';
+        deleteButton.classList.add('delete-button');
+        deleteButton.style.marginLeft = '1em';
 
-deleteButton.addEventListener('click', () => {
-  deleteMenuItem(item._id);
-});
+        deleteButton.addEventListener('click', () => {
+          deleteMenuItem(item._id);
+        });
 
-
-      listItem.appendChild(deleteButton);
+        listItem.appendChild(deleteButton);
+      }
+      // Inget annat ska visas om item.fixed är true
     } else {
+      // Vanlig användarsida: visa ikon för kategori
       const icon = document.createElement('img');
       icon.alt = `ikon för ${item.category}`;
       icon.classList.add('category-icon');
