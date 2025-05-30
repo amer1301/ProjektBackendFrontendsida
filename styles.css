@@ -402,11 +402,11 @@ button:hover {
 }
 
 .form-container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 3em auto;
     background: #e8b5e6;
     background: radial-gradient(circle, rgba(232, 181, 230, 1) 0%, rgba(193, 161, 217, 1) 49%, rgba(148, 222, 233, 1) 100%);
-    padding: 3em 15em;
+    padding: 1em;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -425,7 +425,7 @@ button:hover {
 
     img {
         width: auto;
-        height: 10em;
+        height: 7em;
         margin-left: 5em;
         perspective: 1000px;
     }
@@ -483,7 +483,7 @@ label {
 
 input,
 textarea {
-    width: calc(100% - 160px);
+    width: 50%;
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ccc;
@@ -934,6 +934,14 @@ display: none;
     .cake img {
         width: 45em;
     }
+
+    input,
+textarea {
+    width: 50%;
+    padding: 10px;
+    font-size: 1em;
+}
+
 }
 
 @media (max-width: 998px) {
@@ -1020,6 +1028,20 @@ display: none;
 }
 
 @media (max-width: 786px) {
+
+
+    .headline h2 {
+        font-size: 1.5em;
+        text-align: center;
+        margin: 1em auto;
+    }
+
+    .headline img {
+        margin-left: auto;
+        width: auto;
+        height: 5em;
+    }
+
     .summary p {
     font-weight: 500;
     max-width: 60ch;
@@ -1140,6 +1162,11 @@ width: 90%;
         .cookies h1 {
     font-size: 1.5em;
 }
+
+    .headline img {
+        width: auto;
+        height: 4em;
+    }
 
 #locationInput {
     padding: 1em;
@@ -1262,8 +1289,21 @@ label,
     .cookie-item p, .cake p {
         font-size: 0.8em;
     }
+
+    .headline img {
+        display: none;
+    }
 }
 @media (max-width: 405px) {
+
+    .headline h2 {
+        white-space: normal;
+
+    }
+
+    .text-order {
+    font-size: 1em;
+    }
 h1#menu-heading {
         font-size: 1.2em;
     }
