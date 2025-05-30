@@ -1202,6 +1202,10 @@ width: 90%;
 }
 
 @media (max-width: 530px) {
+
+    #loginFormCustom {
+        width: 90%;
+    }
     #addForm input, #addForm select, #addForm button {
     max-width: 170px;
 }
