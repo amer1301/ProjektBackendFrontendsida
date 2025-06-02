@@ -16,13 +16,22 @@ body {
     position: relative;
 }
 
+#nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-weight: 800;
+    font-size: 1.4em;
+    font-style: normal;
+}
+
 
 #nav-inlog {
     list-style-type: none;
-  display: flex;
-  margin-left: 1em;
-  padding: 0;
-  gap: 1.5em;
+    display: flex;
+    margin-left: 1em;
+    padding: 0;
+    gap: 1.5em;
 }
 
 .nav-menu {
@@ -31,17 +40,17 @@ body {
     gap: 2em;
     margin: 0;
     padding: 1em;
+}
 
-    a {
-        text-decoration: none;
+.nav-menu a {
+    text-decoration: none;
     color: black;
     font-family: 'Patrick Hand SC', cursive;
-    font-optical-sizing: auto;
     font-weight: 800;
     font-size: 1.4em;
     font-style: normal;
-    }
 }
+
 
 .nav-inlog {
     list-style-type: none;
@@ -49,16 +58,6 @@ body {
     margin-left: 1em;
     padding: 0;
     gap: 1.5em;
-}
-
-#nav-menu a {
-    text-decoration: none;
-    color: black;
-    font-family: 'Patrick Hand SC', cursive;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-size: 1.4em;
-    font-style: normal;
 }
 
 .nav-cake {
@@ -79,7 +78,6 @@ body {
     text-decoration: none;
     color: black;
     font-family: 'Patrick Hand SC', cursive;
-    font-optical-sizing: auto;
     font-weight: 700;
     font-size: 1.4em;
     font-style: normal;
@@ -142,16 +140,17 @@ body {
 
 .cookies,
 .cake-info,
-.summary-heading {
+#summary-heading {
     margin-top: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    img {
-        margin-left: 2em;
-    }
 }
+
+#summary-heading img {
+    margin-left: 2em;
+}
+
 
 .summary p {
     margin: 2em auto;
@@ -169,12 +168,14 @@ body {
     font-family: 'Patrick Hand SC', cursive;
     font-weight: 500;
     font-size: 2em;
+    margin-right: 2em;
 }
 
 .cake-info h2 {
     font-family: 'Patrick Hand SC', cursive;
     font-weight: 500;
     font-size: 2em;
+    margin-right: 2em;
 }
 
 .images-cookies {
@@ -273,15 +274,16 @@ footer {
     display: flex;
     background-color: #E8B5E6;
     width: 100%;
-
-    p {
-        text-align: center;
-        justify-content: center;
-        margin: 1em auto;
-        font-family: 'Patrick Hand SC', cursive;
-        font-size: 2em;
-    }
 }
+
+footer p {
+    text-align: center;
+    justify-content: center;
+    margin: 1em auto;
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2em;
+}
+
 
 .menu {
     width: 100%;
@@ -298,21 +300,22 @@ footer {
     font-family: 'Sacramento', cursive;
     font-size: 4em;
     display: flex;
-
-    img {
-        width: auto;
-        height: 2.5em;
-        margin-left: 2em;
-        margin-top: 1em;
-    }
-
-    h1 {
-        color: rgb(0, 0, 0);
-        font-family: 'Sacramento', cursive;
-        font-size: 2em;
-        text-align: center;
-    }
 }
+
+.overlaytext-menu img {
+    width: auto;
+    height: 2.5em;
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+.overlaytext-menu h1 {
+    color: rgb(0, 0, 0);
+    font-family: 'Sacramento', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
 
 h1 {
     color: rgb(0, 0, 0);
@@ -324,8 +327,9 @@ h1 {
 
 .overlaytext2-menu {
     position: absolute;
+}
 
-    h2 {
+   .overlaytext2-menu h2 {
         color: rgb(0, 0, 0);
         font-family: 'Patrick Hand SC', cursive;
         font-size: 2em;
@@ -333,15 +337,14 @@ h1 {
         text-align: center;
     }
 
-    p {
+   .overlaytext2-menu p {
         color: rgb(0, 0, 0);
         font-family: 'Patrick Hand SC', cursive;
         font-size: 1.5em;
-        text-align: 2em;
         text-align: center;
         max-width: 70ch;
     }
-}
+
 
 #map {
     height: 400px;
@@ -354,20 +357,21 @@ h1 {
     display: flex;
     margin: 0 auto;
     justify-content: center;
+}
 
-    h2 {
+   .adress h2 {
         color: rgb(0, 0, 0);
         font-family: 'Patrick Hand SC', cursive;
         font-size: 2em;
     }
 
-    img {
+   .adress img {
         width: auto;
         height: 3em;
         margin-left: 1em;
         margin-top: 0.8em;
     }
-}
+
 
 .karta {
     display: flex;
@@ -413,8 +417,9 @@ button:hover {
 
 .headline {
     display: flex;
+}
 
-    h2 {
+   .headline h2 {
         text-align: center;
         color: rgb(0, 0, 0);
         font-family: 'Patrick Hand SC', cursive;
@@ -423,13 +428,13 @@ button:hover {
         white-space: nowrap
     }
 
-    img {
+   .headline img {
         width: auto;
         height: 7em;
         margin-left: 5em;
         perspective: 1000px;
     }
-}
+
 
 .roterande-bild {
     width: 100%;
@@ -449,7 +454,7 @@ button:hover {
 
 
 #formMessage {
-        font-weight: bold;
+    font-weight: bold;
     font-family: 'Patrick Hand SC', cursive;
     font-size: 1.5em;
 }
@@ -501,34 +506,34 @@ textarea {
 input[type="date"],
 input[type="time"],
 select {
-  width: calc(100% - 160px);
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: white;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+    width: calc(100% - 160px);
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: white;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
 input[type="date"]:focus,
 input[type="time"]:focus,
 select:focus {
-  outline: none;
-  border-color: #94DEE9;
-  box-shadow: 0 0 5px rgba(148, 222, 233, 0.7);
+    outline: none;
+    border-color: #94DEE9;
+    box-shadow: 0 0 5px rgba(148, 222, 233, 0.7);
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z" fill="%23666"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 10px 10px;
-  cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z" fill="%23666"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 10px;
+    cursor: pointer;
 }
 
 
@@ -569,50 +574,47 @@ select {
 }
 
 #message {
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 5px;
-  font-weight: bold;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 #message.error {
-  background-color: #ffe5e5;
-  color: black;
-  border: 1px solid #c00;
+    background-color: #ffe5e5;
+    color: black;
+    border: 1px solid #c00;
 }
 
 #message.success {
-  background-color: #e5ffe5;
-  color: black;
-  border: 1px solid #080;
+    background-color: #e5ffe5;
+    color: black;
+    border: 1px solid #080;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 #welcomeText {
     color: black;
     font-family: 'Patrick Hand SC', cursive;
-    font-optical-sizing: auto;
     font-weight: 800;
     font-size: 1.6em;
     font-style: normal;
 }
 
 .logout-button {
-  background: none;
-  margin-right: 1em;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: black;
-  font-family: 'Patrick Hand SC', cursive;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-size: 1.4em;
-  font-style: normal;
-  font-optical-sizing: auto;
+    background: none;
+    margin-right: 1em;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    font-weight: 800;
+    font-size: 1.4em;
+    font-style: normal;
 }
 
 #admin-section {
@@ -626,22 +628,23 @@ select {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 500px;
     box-sizing: border-box;
-    h2 {
+}
+   #admin-section h2 {
         color: rgb(0, 0, 0);
         font-family: 'Patrick Hand SC', cursive;
         font-size: 2em;
         text-align: center;
         margin-bottom: 2em;
     }
-}
+
 
 #addForm input,
 #addForm select,
 #addForm button {
-  display: block;
-  margin-bottom: 1em;
-  width: 100%;
-  max-width: 500px;
+    display: block;
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 500px;
 }
 
 #cafe,
@@ -669,11 +672,11 @@ select {
 }
 
 .menu-item {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  align-items: center;
-  margin: 2em auto;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    margin: 2em auto;
 }
 
 
@@ -690,50 +693,53 @@ select {
     width: 700px;
     box-sizing: border-box;
     margin-bottom: 2em;
-    h3 {
-            font-family: 'Patrick Hand SC', cursive;
-    font-weight: 700;
-    font-size: 2em;
-    }
 }
 
-#cafeNameTitle {
-color: rgb(0, 0, 0);
+   .added-menu h3 {
         font-family: 'Patrick Hand SC', cursive;
+        font-weight: 700;
         font-size: 2em;
-        text-align: center;
-        margin-bottom: 2em;
+    }
+
+
+#cafeNameTitle {
+    color: rgb(0, 0, 0);
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
 }
 
 .category-icon {
-width: 2em;
-height: auto;
+    width: 2em;
+    height: auto;
 }
 
- .modal { 
-    display: none; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.5); 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-  .modal-content { 
-    position: relative; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+
+.modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 15em;
-    background-color: white; 
+    background-color: white;
     padding: 1.5em;
-     display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px; 
-  font-size: 1.5em;
-  border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
 }
 
 #bestallningsContainer {
@@ -753,27 +759,27 @@ height: auto;
 }
 
 .bestallningslista h2 {
-        color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
-        font-size: 2em;
-        text-align: center;
-        margin-bottom: 4em auto;
+    color: rgb(0, 0, 0);
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 4em;
 }
 
 #bestallningsContainer h3 {
-            color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
-        font-size: 2em;
-        text-align: center;
-        margin-bottom: 4em auto;
+    color: rgb(0, 0, 0);
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 4em;
 }
 
 #bestallningsContainer p {
-                color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
-        font-size: 1.2em;
-        text-align: center;
-        margin-bottom: 4em auto;
+    color: rgb(0, 0, 0);
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 4em;
 }
 
 
@@ -785,7 +791,7 @@ height: auto;
 }
 
 #filterCafe {
-display: block;
+    display: block;
     margin: 2em auto;
     width: 100%;
     max-width: 250px;
@@ -793,39 +799,38 @@ display: block;
 }
 
 #bestallningsContainer select {
-display: block;  
-  padding: 8px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
-  margin: 1em auto;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    margin: 1em auto;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #bestallningsContainer select:focus {
-  outline: none;
-  border-color: #f080cc;
-  box-shadow: 0 0 0 2px rgba(240, 128, 128, 0.2);
+    outline: none;
+    border-color: #f080cc;
+    box-shadow: 0 0 0 2px rgba(240, 128, 128, 0.2);
 }
 
 .visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
 .menu-toggle-admin {
-display: none;
+    display: none;
     background: none;
     font-size: 2em;
     border: none;
@@ -840,24 +845,25 @@ display: none;
     gap: 2em;
     margin: 0;
     padding: 1em;
-
-    a {
-        text-decoration: none;
-    color: black;
-    font-family: 'Patrick Hand SC', cursive;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-size: 1.4em;
-    font-style: normal;
-    }
 }
+
+   .nav-menu-admin a {
+        text-decoration: none;
+        color: black;
+        font-family: 'Patrick Hand SC', cursive;
+        font-weight: 800;
+        font-size: 1.4em;
+        font-style: normal;
+    }
+
 
 .admin-menu.open-admin .nav-menu-admin {
-  display: flex;
-  margin-left: 1em;
-  margin-right: auto;
-  cursor: pointer;
+    display: flex;
+    margin-left: 1em;
+    margin-right: auto;
+    cursor: pointer;
 }
+
 @media (max-width: 1395px) {
 
     .cake img {
@@ -872,7 +878,7 @@ display: none;
 
     .menu-item img {
         width: 2em;
-    height: auto;
+        height: auto;
     }
 
     .overlaytext2-menu h2 {
@@ -936,11 +942,11 @@ display: none;
     }
 
     input,
-textarea {
-    width: 50%;
-    padding: 10px;
-    font-size: 1em;
-}
+    textarea {
+        width: 50%;
+        padding: 10px;
+        font-size: 1em;
+    }
 
 }
 
@@ -971,13 +977,14 @@ textarea {
     }
 
     .menu-item {
-    gap: 0.2em;
+        gap: 0.2em;
     }
 
-.menu-toggle-admin {
+    .menu-toggle-admin {
         display: block;
         margin-right: auto;
     }
+
     .nav-menu-admin {
         display: none;
         flex-direction: column;
@@ -990,7 +997,7 @@ textarea {
         z-index: 10;
     }
 
-        .menu-nav-admin.open #nav-menu-admin {
+    .menu-nav-admin.open #nav-menu-admin {
         display: flex;
     }
 }
@@ -1024,7 +1031,7 @@ textarea {
 
     footer p {
         font-size: 1.5em;
-}
+    }
 }
 
 @media (max-width: 786px) {
@@ -1043,44 +1050,45 @@ textarea {
     }
 
     .summary p {
-    font-weight: 500;
-    max-width: 60ch;
-}
+        font-weight: 500;
+        max-width: 60ch;
+    }
+
     .overlaytext-menu {
-    font-size: 2em;
-}
+        font-size: 2em;
+    }
 
-h2#bestallningar-heading {
-    font-size: 1.5em;
-}
+    h2#bestallningar-heading {
+        font-size: 1.5em;
+    }
 
-#bestallningsContainer {
-    width: 90%;
-}
+    #bestallningsContainer {
+        width: 90%;
+    }
 
-.bestallningslista label {
-    font-size: 1.2em;
-}
+    .bestallningslista label {
+        font-size: 1.2em;
+    }
 
-.overlaytext2-menu h2 {
+    .overlaytext2-menu h2 {
         font-size: 1.2em;
         margin-top: 6em;
     }
 
     .overlaytext2-menu p {
         font-size: 1em;
-}
+    }
 
-#bestallningsContainer h3 {
-    font-size: 1.5em;
-}
+    #bestallningsContainer h3 {
+        font-size: 1.5em;
+    }
 
     li.menu-item {
         font-size: 0.6em;
     }
 
     h1 {
-    font-size: 1.3em;
+        font-size: 1.3em;
     }
 
     .adress img {
@@ -1097,8 +1105,8 @@ h2#bestallningar-heading {
 @media (max-width: 746px) {
 
     .added-menu {
-width: 90%;
-}
+        width: 90%;
+    }
 
     .cake img {
         width: 35em;
@@ -1122,13 +1130,13 @@ width: 90%;
     }
 
     .overlay-text4 {
-    font-size: 1.5em;
-    top: 14em;
+        font-size: 1.5em;
+        top: 14em;
     }
 
-        #nav-menu {
+    #nav-menu {
         width: 40%;
-        }
+    }
 }
 
 @media (max-width: 668px) {
@@ -1140,55 +1148,57 @@ width: 90%;
 @media (max-width: 619px) {
 
     .summary p {
-    max-width: 50ch;
-    margin-left: 1em;
-}
-            #nav-menu {
-        width: 45%;
-        }
+        max-width: 50ch;
+        margin-left: 1em;
+    }
 
-            .image-firstpage {
+    #nav-menu {
+        width: 45%;
+    }
+
+    .image-firstpage {
         height: 500px;
     }
 
-        .overlay-text3 {
+    .overlay-text3 {
         top: 8em;
-        }
+    }
 
-        .overlay-text4 {
+    .overlay-text4 {
         top: 9em;
-        }
+    }
 
-        .cookies h1 {
-    font-size: 1.5em;
-}
+    .cookies h1 {
+        font-size: 1.5em;
+    }
 
     .headline img {
         width: auto;
         height: 4em;
     }
 
-#locationInput {
-    padding: 1em;
-    width: 8em;
-}
-.cookie-item p,
-.cake p {
-    font-size: 1em;
-}
+    #locationInput {
+        padding: 1em;
+        width: 8em;
+    }
 
-.cake-info h2 {
+    .cookie-item p,
+    .cake p {
+        font-size: 1em;
+    }
+
+    .cake-info h2 {
         font-size: 1.2em;
         text-align: center;
     }
 
-        footer p {
+    footer p {
         font-size: 1.2em;
-}
+    }
 
-#nav-menu a {
-    font-size: 1.2em;
-}
+    #nav-menu a {
+        font-size: 1.2em;
+    }
 
     .cake img {
         width: 25em;
@@ -1198,7 +1208,7 @@ width: 90%;
 @media (max-width: 553px) {
     .overlaytext2-menu p {
         max-width: 30ch;
-}
+    }
 }
 
 @media (max-width: 530px) {
@@ -1206,25 +1216,28 @@ width: 90%;
     #loginFormCustom {
         width: 90%;
     }
-    #addForm input, #addForm select, #addForm button {
-    max-width: 170px;
-}
 
-#addForm button {
-    align-self: center;
-    margin: 2em auto;
-}
+    #addForm input,
+    #addForm select,
+    #addForm button {
+        max-width: 170px;
+    }
 
-#admin-section {
-    width: 90%;
-}
+    #addForm button {
+        align-self: center;
+        margin: 2em auto;
+    }
 
-#map {
-    height: 300px;
-    margin-top: 2em;
-    margin-right: 1.5em;
-    margin-left: 1.5em;
-}
+    #admin-section {
+        width: 90%;
+    }
+
+    #map {
+        height: 300px;
+        margin-top: 2em;
+        margin-right: 1.5em;
+        margin-left: 1.5em;
+    }
 }
 
 @media (max-width: 512px) {
@@ -1232,52 +1245,57 @@ width: 90%;
     .cookies h2 {
         text-align: center;
     }
-        #addForm input, #addForm select, #addForm button {
-    max-width: 200px
-}
-        .cookie-item {
+
+    #addForm input,
+    #addForm select,
+    #addForm button {
+        max-width: 200px
+    }
+
+    .cookie-item {
         width: 75%;
     }
 
     .nav-cake,
     .nav-slice {
         display: none;
-}
+    }
 
     .cake img {
         width: 80%;
     }
 
     #menuList {
-    font-size: 1.2em;
-}
+        font-size: 1.2em;
+    }
 
-#welcomeText,
-#admin-section h2,
-label,
-.added-menu h3 { 
-    font-size: 1.2em;
-}
+    #welcomeText,
+    #admin-section h2,
+    label,
+    .added-menu h3 {
+        font-size: 1.2em;
+    }
 
-.admin-menu.open-admin .nav-menu-admin {
-    font-size: 0.8em;
-}
+    .admin-menu.open-admin .nav-menu-admin {
+        font-size: 0.8em;
+    }
 
-.logout-button {
-    margin-right: 0.5em;
-    font-size: 1.2em;
-    white-space: nowrap;
-}
+    .logout-button {
+        margin-right: 0.5em;
+        font-size: 1.2em;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 454px) {
-        .image-firstpage {
+    .image-firstpage {
         height: 350px;
     }
 
-        .overlay-text1 {
+    .overlay-text1 {
         font-size: 2.5em;
     }
+
     .overlay-text2,
     .overlay-text3,
     .overlay-text4 {
@@ -1290,7 +1308,8 @@ label,
         margin-right: 1em;
     }
 
-    .cookie-item p, .cake p {
+    .cookie-item p,
+    .cake p {
         font-size: 0.8em;
     }
 
@@ -1298,6 +1317,7 @@ label,
         display: none;
     }
 }
+
 @media (max-width: 405px) {
 
     .headline h2 {
@@ -1306,36 +1326,37 @@ label,
     }
 
     .text-order {
-    font-size: 1em;
+        font-size: 1em;
     }
-h1#menu-heading {
+
+    h1#menu-heading {
         font-size: 1.2em;
     }
 
-        img.munk {
+    img.munk {
         width: auto;
         height: 1.6em;
     }
 
-        .overlaytext2-menu h2 {
+    .overlaytext2-menu h2 {
         font-size: 1em;
         margin-top: 5.5em;
     }
 
-        .overlaytext2-menu p {
+    .overlaytext2-menu p {
         font-size: 0.8em;
     }
 
-        h2#bestallningar-heading {
+    h2#bestallningar-heading {
         font-size: 1.2em;
     }
 
-        .bestallningslista label,
-        #bestallningsContainer p {
+    .bestallningslista label,
+    #bestallningsContainer p {
         font-size: 1em;
     }
 
-        #bestallningsContainer h3 {
+    #bestallningsContainer h3 {
         font-size: 1.2em;
     }
 
