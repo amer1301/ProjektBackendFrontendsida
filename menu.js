@@ -1,3 +1,5 @@
+let currentCafe = null;
+
 const cafeNameTitle = document.getElementById('cafeNameTitle');
 const addedMenuSection = document.querySelector('.added-menu'); 
 
@@ -18,6 +20,7 @@ async function loadMenuItems() {
 
 // Hämta menyobjekt för ett specifikt kafé (kafésida)
 async function loadMenuForCafe(cafeName) {
+  currentCafe = cafeName;
   try {
     const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${cafeName}`);
     if (response.ok) {
@@ -30,6 +33,7 @@ async function loadMenuForCafe(cafeName) {
     console.error('Fel vid hämtning av meny:', error);
   }
 }
+
 
 // Visa menyobjekt i HTML
 function renderMenuItems(menuItems) {
@@ -105,20 +109,21 @@ function renderMenuItems(menuItems) {
 // Ta bort menyobjekt via API
 async function deleteMenuItem(itemId) {
   try {
-    const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${itemId}`, {
+    const response = await fetch(`/api/menu/delete/${itemId}`, {
       method: 'DELETE'
     });
-
     if (response.ok) {
-      console.log('Bakverk borttaget');
-      loadMenuItems(); // Ladda om listan efter radering
-    } else {
-      console.error('Fel vid borttagning:', response.status);
+      if (currentCafe) {
+        loadMenuForCafe(currentCafe);
+      } else {
+        loadMenuItems();
+      }
     }
   } catch (error) {
-    console.error('Nätverksfel vid borttagning:', error);
+    console.error('Fel vid borttagning:', error);
   }
 }
+
 
 // Gör funktionerna globala (om de ska användas i andra filer)
 window.loadMenuItems = loadMenuItems;
