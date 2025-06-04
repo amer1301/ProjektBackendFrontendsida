@@ -730,9 +730,10 @@ select {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 15em;
+    width: 50%;
+    height: auto;
     background-color: white;
-    padding: 1.5em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -740,6 +741,10 @@ select {
     gap: 10px;
     font-size: 1.5em;
     border-radius: 5px;
+}
+
+h2#modalTitle {
+    margin-bottom: 0;
 }
 
 #bestallningsContainer {
@@ -1146,6 +1151,14 @@ select {
 }
 
 @media (max-width: 619px) {
+
+    h2#modalTitle {
+    font-size: 1.2em;
+}
+
+p#modalDesc {
+    font-size: 0.8em;
+}
 
     .summary p {
         max-width: 50ch;
