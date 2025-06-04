@@ -19,7 +19,7 @@ body {
 #nav-menu a {
     text-decoration: none;
     color: black;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 800;
     font-size: 1.4em;
     font-style: normal;
@@ -45,7 +45,7 @@ body {
 .nav-menu a {
     text-decoration: none;
     color: black;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 800;
     font-size: 1.4em;
     font-style: normal;
@@ -77,7 +77,7 @@ body {
 .nav-inlog a {
     text-decoration: none;
     color: black;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 700;
     font-size: 1.4em;
     font-style: normal;
@@ -103,7 +103,7 @@ body {
     top: 0.3em;
     left: 0.3em;
     color: white;
-    font-family: 'Sacramento', cursive;
+    font-family: 'Sacramento', 'Segoe Script', 'Lucida Handwriting', 'Bradley Hand', cursive;
     font-size: 8em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -113,7 +113,7 @@ body {
     top: 3.4em;
     left: 0.7em;
     color: white;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 3em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -123,7 +123,7 @@ body {
     top: 6em;
     left: 3em;
     color: white;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 4em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -133,7 +133,7 @@ body {
     top: 7em;
     left: 0.7em;
     color: white;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 4em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -156,7 +156,7 @@ body {
     margin: 2em auto;
     font-weight: bold;
     max-width: 70ch;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 2em;
     font-size: 1em;
     text-align: start;
@@ -165,14 +165,14 @@ body {
 
 .cookies h2,
 #summary-heading h1 {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 500;
     font-size: 2em;
     margin-right: 2em;
 }
 
 .cake-info h2 {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 500;
     font-size: 2em;
     margin-right: 2em;
@@ -219,7 +219,7 @@ body {
 .cookie-item {
     text-align: center;
     width: 400px;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .image-wrapper {
@@ -266,7 +266,7 @@ body {
     text-align: center;
     justify-content: center;
     margin: 1em auto;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Karla', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 footer {
@@ -280,7 +280,7 @@ footer p {
     text-align: center;
     justify-content: center;
     margin: 1em auto;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 2em;
 }
 
@@ -297,7 +297,7 @@ footer p {
 .overlaytext-menu {
     position: absolute;
     color: rgb(0, 0, 0);
-    font-family: 'Sacramento', cursive;
+    font-family: 'Sacramento', 'Segoe Script', 'Lucida Handwriting', 'Bradley Hand', cursive;
     font-size: 4em;
     display: flex;
 }
@@ -311,7 +311,7 @@ footer p {
 
 .overlaytext-menu h1 {
     color: rgb(0, 0, 0);
-    font-family: 'Sacramento', cursive;
+    font-family: 'Sacramento', 'Segoe Script', 'Lucida Handwriting', 'Bradley Hand', cursive;
     font-size: 2em;
     text-align: center;
 }
@@ -319,7 +319,7 @@ footer p {
 
 h1 {
     color: rgb(0, 0, 0);
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 2em;
     text-align: center;
     font-weight: 500;
@@ -331,7 +331,7 @@ h1 {
 
    .overlaytext2-menu h2 {
         color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-size: 2em;
         margin-top: 8em;
         text-align: center;
@@ -339,7 +339,7 @@ h1 {
 
    .overlaytext2-menu p {
         color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-size: 1.5em;
         text-align: center;
         max-width: 70ch;
@@ -361,7 +361,7 @@ h1 {
 
    .adress h2 {
         color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-size: 2em;
     }
 
@@ -399,7 +399,7 @@ button:hover {
 
 #result {
     color: rgb(0, 0, 0);
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 1.5em;
     text-align: center;
     margin-top: 3em;
@@ -422,7 +422,7 @@ button:hover {
    .headline h2 {
         text-align: center;
         color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-size: 2em;
         margin-bottom: 2em;
         white-space: nowrap
@@ -455,7 +455,7 @@ button:hover {
 
 #formMessage {
     font-weight: bold;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 1.5em;
 }
 
@@ -468,7 +468,7 @@ form {
 
 label {
     font-weight: bold;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 1.5em;
     width: 150px;
     display: flex;
@@ -478,7 +478,7 @@ label {
 
 #filterDescription {
     font-weight: bold;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 1.5em;
     display: flex;
     justify-content: center;
@@ -547,7 +547,7 @@ select {
 
 .text-order {
     font-weight: bold;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 1.5em;
 }
 
@@ -598,7 +598,7 @@ select {
 
 #welcomeText {
     color: black;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 800;
     font-size: 1.6em;
     font-style: normal;
@@ -611,7 +611,7 @@ select {
     padding: 0;
     cursor: pointer;
     color: black;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: 800;
     font-size: 1.4em;
     font-style: normal;
@@ -631,7 +631,7 @@ select {
 }
    #admin-section h2 {
         color: rgb(0, 0, 0);
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-size: 2em;
         text-align: center;
         margin-bottom: 2em;
@@ -664,7 +664,7 @@ select {
 }
 
 #menuList {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-weight: bold;
     font-size: 1.5em;
     list-style-type: none;
@@ -696,7 +696,7 @@ select {
 }
 
    .added-menu h3 {
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-weight: 700;
         font-size: 2em;
     }
@@ -704,7 +704,7 @@ select {
 
 #cafeNameTitle {
     color: rgb(0, 0, 0);
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 2em;
     text-align: center;
     margin-bottom: 2em;
@@ -760,7 +760,7 @@ select {
 
 .bestallningslista h2 {
     color: rgb(0, 0, 0);
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 2em;
     text-align: center;
     margin-bottom: 4em;
@@ -768,7 +768,7 @@ select {
 
 #bestallningsContainer h3 {
     color: rgb(0, 0, 0);
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 2em;
     text-align: center;
     margin-bottom: 4em;
@@ -776,7 +776,7 @@ select {
 
 #bestallningsContainer p {
     color: rgb(0, 0, 0);
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
     font-size: 1.2em;
     text-align: center;
     margin-bottom: 4em;
@@ -850,7 +850,7 @@ select {
    .nav-menu-admin a {
         text-decoration: none;
         color: black;
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: 'Patrick Hand SC', 'Comic Sans MS', 'Segoe Print', 'Bradley Hand', cursive;
         font-weight: 800;
         font-size: 1.4em;
         font-style: normal;
