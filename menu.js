@@ -22,7 +22,7 @@ async function loadMenuItems() {
 // Hämta menyobjekt för ett specifikt kafé
 async function loadMenuForCafe(cafeName) {
   try {
-    const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${cafeName}`);
+    const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/by-cafe/${cafeName}`);
     if (response.ok) {
       const menuItems = await response.json();
       renderMenuItems(menuItems);
@@ -33,6 +33,7 @@ async function loadMenuForCafe(cafeName) {
     console.error('Fel vid hämtning av meny:', error);
   }
 }
+
 
 // Visa menyobjekt i HTML
 function renderMenuItems(menuItems) {
