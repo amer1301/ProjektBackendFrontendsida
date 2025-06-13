@@ -386,11 +386,13 @@ h1 {
 }
 
 button {
+    white-space: nowrap;
     padding: 1em 2em;
     border-radius: 1em;
     font-weight: bold;
     background-color: #94DEE9;
 }
+
 
 button:hover {
     cursor: pointer;
@@ -1255,6 +1257,11 @@ p#modalDesc {
 
 @media (max-width: 512px) {
 
+    .edit-button,
+.delete-button {
+        padding: 0.5em 1em;
+}
+
     .cookies h2 {
         text-align: center;
     }
@@ -1375,5 +1382,9 @@ p#modalDesc {
 
     #bestallningsContainer select {
         width: 350px;
+    }
+
+    .added-menu {
+        width: 95%;
     }
 }
