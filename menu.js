@@ -1,7 +1,8 @@
 let currentCafe = null;
 
 const cafeNameTitle = document.getElementById('cafeNameTitle');
-const addedMenuSection = document.querySelector('.added-menu'); 
+const addedMenuSection = document.querySelector('.added-menu');
+const form = document.getElementById('addForm');
 
 // Hämta menyobjekt för alla kaféer (administration)
 async function loadMenuItems() {
@@ -18,7 +19,7 @@ async function loadMenuItems() {
   }
 }
 
-// Hämta menyobjekt för ett specifikt kafé (kafésida)
+// Hämta menyobjekt för ett specifikt kafé
 async function loadMenuForCafe(cafeName) {
   try {
     const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${cafeName}`);
@@ -41,42 +42,38 @@ function renderMenuItems(menuItems) {
   const isAdminPage = document.body.id === 'admin-page';
   menuContainer.innerHTML = '';
 
-  if (menuItems.length > 0) {
-    if (isAdminPage && cafeNameTitle) {
-      cafeNameTitle.textContent = `Ammis bakverk i: ${menuItems[0].cafe}`;
-    }
-  } else {
-    if (isAdminPage && cafeNameTitle) {
-      cafeNameTitle.textContent = 'Inga bakverk tillagda ännu för valt kafé.';
-    }
+  if (menuItems.length > 0 && isAdminPage && cafeNameTitle) {
+    cafeNameTitle.textContent = `Ammis bakverk i: ${menuItems[0].cafe}`;
+  } else if (isAdminPage && cafeNameTitle) {
+    cafeNameTitle.textContent = 'Inga bakverk tillagda ännu för valt kafé.';
   }
 
   menuItems.forEach(item => {
     const listItem = document.createElement('li');
     listItem.classList.add('menu-item');
 
-    // Texten
     const textSpan = document.createElement('span');
     textSpan.textContent = `${item.name} - ${item.price} SEK (${item.category})`;
     listItem.appendChild(textSpan);
 
-    if (isAdminPage) {
-      // Visa "Ta bort"-knapp ENDAST om item.fixed är falskt/undefined
-      if (!item.fixed) {
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Ta bort';
-        deleteButton.classList.add('delete-button');
-        deleteButton.style.marginLeft = '1em';
+    if (isAdminPage && !item.fixed) {
+      // Redigera-knapp
+      const editButton = document.createElement('button');
+      editButton.textContent = 'Redigera';
+      editButton.classList.add('edit-button');
+      editButton.style.marginLeft = '0.5em';
+      editButton.addEventListener('click', () => populateEditForm(item));
+      listItem.appendChild(editButton);
 
-        deleteButton.addEventListener('click', () => {
-          deleteMenuItem(item._id);
-        });
-
-        listItem.appendChild(deleteButton);
-      }
-      // Inget annat ska visas om item.fixed är true
-    } else {
-      // Vanlig användarsida: visa ikon för kategori
+      // Ta bort-knapp
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Ta bort';
+      deleteButton.classList.add('delete-button');
+      deleteButton.style.marginLeft = '0.5em';
+      deleteButton.addEventListener('click', () => deleteMenuItem(item._id));
+      listItem.appendChild(deleteButton);
+    } else if (!isAdminPage) {
+      // Användarsida – ikon
       const icon = document.createElement('img');
       icon.alt = `ikon för ${item.category}`;
       icon.classList.add('category-icon');
@@ -103,8 +100,18 @@ function renderMenuItems(menuItems) {
   });
 }
 
+// Fyll i formuläret vid redigering
+function populateEditForm(item) {
+  document.getElementById('name').value = item.name;
+  document.getElementById('price').value = item.price;
+  document.getElementById('category').value = item.category;
+  document.getElementById('cafe').value = item.cafe;
+  document.getElementById('editId').value = item._id;
+  console.log('Redigerar ID:', item._id);
+  form.querySelector('button[type="submit"]').textContent = 'Spara ändringar';
+}
 
-// Ta bort menyobjekt via API
+// Ta bort menyobjekt
 async function deleteMenuItem(itemId) {
   try {
     const response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${itemId}`, {
@@ -113,7 +120,12 @@ async function deleteMenuItem(itemId) {
 
     if (response.ok) {
       console.log('Bakverk borttaget');
-      loadMenuItems(); // Ladda om listan efter radering
+      const selectedCafe = document.getElementById('cafe').value;
+      if (selectedCafe) {
+        loadMenuForCafe(selectedCafe.toLowerCase());
+      } else {
+        loadMenuItems();
+      }
     } else {
       console.error('Fel vid borttagning:', response.status);
     }
@@ -122,62 +134,73 @@ async function deleteMenuItem(itemId) {
   }
 }
 
-// Gör funktionerna globala (om de ska användas i andra filer)
+// Formulärsubmit – lägg till eller uppdatera
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const price = parseInt(document.getElementById('price').value, 10);
+  const category = document.getElementById('category').value;
+  const cafe = document.getElementById('cafe').value;
+  const editId = document.getElementById('editId').value;
+
+  const itemData = { name, price, category, cafe };
+
+  try {
+let response;
+
+ if (editId) {
+      // REDIGERA
+       response = await fetch(`https://projektbackendapi.onrender.com/api/menu/menu-items/${editId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(itemData)
+      });
+    } else {
+      // LÄGG TILL
+      response = await fetch('https://projektbackendapi.onrender.com/api/menu/menu-items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(itemData)
+      });
+    }
+
+    if (response.ok) {
+      console.log(editId ? 'Bakverk uppdaterat' : 'Bakverk tillagt');
+      form.reset();
+      document.getElementById('editId').value = '';
+      form.querySelector('button[type="submit"]').textContent = 'Lägg till bakverk';
+
+      if (cafe) {
+        loadMenuForCafe(cafe.toLowerCase());
+      } else {
+        loadMenuItems();
+      }
+    } else {
+      console.error('Fel vid sparande:', response.status);
+    }
+
+  } catch (error) {
+    console.error('Nätverksfel:', error);
+  }
+});
+
+// Hantera kaféval i dropdown
+const cafeSelect = document.getElementById('cafe');
+cafeSelect.addEventListener('change', (e) => {
+  const selectedCafe = e.target.value;
+  if (selectedCafe) {
+    addedMenuSection.style.display = 'flex';
+    loadMenuForCafe(selectedCafe.toLowerCase());
+  } else {
+    addedMenuSection.style.display = 'none';
+    cafeNameTitle.textContent = '';
+  }
+});
+
+// Gör globala (för ev. extern användning)
 window.loadMenuItems = loadMenuItems;
 window.loadMenuForCafe = loadMenuForCafe;
-
-// --- Eventlistener för kaféval i dropdown ---
-const cafeSelect = document.getElementById('cafe');
-  cafeSelect.addEventListener('change', (e) => {
-    const selectedCafe = e.target.value;
-    if (selectedCafe) {
-      addedMenuSection.style.display = 'flex';  // Visa sektionen när kafé väljs
-      loadMenuForCafe(selectedCafe.toLowerCase());
-    } else {
-      addedMenuSection.style.display = 'none';  // Dölj om inget är valt
-      cafeNameTitle.textContent = '';
-    }
-  });
-
-
-// --- Eventlistener för formulär - lägg till nytt bakverk ---
-const form = document.getElementById('addForm');
-if (form) {
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const price = document.getElementById('price').value;
-    const category = document.getElementById('category').value;
-    const cafe = document.getElementById('cafe')?.value || "okänt";
-
-    const newItem = { name, price, category, cafe };
-
-    try {
-      const response = await fetch('https://projektbackendapi.onrender.com/api/menu/menu-items', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newItem)
-      });
-
-      if (response.ok) {
-        const createdItem = await response.json();
-        console.log('Bakverk tillagt:', createdItem);
-
-        // Uppdatera menylistan beroende på valt kafé
-        if (cafe) {
-          loadMenuForCafe(cafe.toLowerCase());
-        } else {
-          loadMenuItems();
-        }
-
-        // Rensa formuläret
-        e.target.reset();
-      } else {
-        console.error('Fel vid tillägg av bakverk:', response.status);
-      }
-    } catch (error) {
-      console.error('Nätverksfel vid tillägg av bakverk:', error);
-    }
-  });
-}
